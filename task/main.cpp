@@ -20,12 +20,13 @@ int main() {
 	for (int i = 0; i < STACKSIZE+1; i++) {
 		flag[i] = false;
 	}
-
+	
 	while (getline(outFile, FileOut)) {
 		FileIn = "";
 		check = 0;
 		flag_c = false;
 		u = 0;
+		cout << endl << " Prefix: " << FileOut;
 		
 		for (int i = 0; i < FileOut.length(); i++) {
 			buff = FileOut[i];
@@ -76,17 +77,13 @@ int main() {
 			}
 			buff = "";
 		}
-		cout << FileIn << endl;
+		cout << endl << "Postfix: " << FileIn;
 		inFile << FileIn;
 		inFile << endl;
 	}
+	delete []flag;
 	outFile.close();
 	inFile.close();
 	
 	return 0;
 }
-
-
-
-
-
