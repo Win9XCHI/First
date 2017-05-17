@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="juices.xsl" ?>
+
+<products>
+  <product_item>
+    <product_name>Tropicana Orange</product_name>
+    <company_name>Pepsico</company_name>
+    <nutritional_content>
+      <fats>0</fats>
+      <carbohydrates>56</carbohydrates>
+      <protein>10</protein>
+    </nutritional_content>
+    <image>
+      <title>Tropicana Orange</title>
+      <alt>Tropicana Orange</alt>
+      <url>../images/juices/tropicana-orange.jpg</url>
+    </image>
+    <ingredients>Oranges, water</ingredients>
+    <link>
+      <url>http://www.pepsicobeveragefacts.com/Home/Product?formula=F0000000141&amp;form=RTD&amp;size=15.2</url>
+    </link>
+    <link>
+      <url>https://www.tropicana.co.uk/our-products/orange/orange-smooth#</url>
+    </link>
+    <facts>Taste better when cold.</facts>
+  </product_item>
+
+  <product_item>
+    <product_name>Tropicana Apple</product_name>
+    <company_name>Pepsico</company_name>
+    <nutritional_content>
+      <fats>0</fats>
+      <carbohydrates>68</carbohydrates>
+      <protein>12</protein>
+    </nutritional_content>
+    <image>
+      <title>Tropicana Apple</title>
+      <alt>Tropicana Apple</alt>
+      <url>../images/juices/tropicana-apple.jpg</url>
+    </image>
+    <ingredients>Water, apples</ingredients>
+    <link>
+      <url>https://www.tropicana.co.uk/our-products/apple/classic-apple</url>
+    </link>
+    <link>
+      <url>http://origin-www.pepsicobeveragefacts.com/Home/Product?formula=F0000000169&amp;form=RTD&amp;size=12</url>
+    </link>
+    <facts>Taste better when cold.</facts>
+  </product_item>
+
+  <product_item>
+    <product_name>Copella Orange</product_name>
+    <company_name>Pepsico</company_name>
+    <nutritional_content>
+      <fats>0</fats>
+      <carbohydrates>70</carbohydrates>
+      <protein>9</protein>
+    </nutritional_content>
+    <image>
+      <title>Copella Orange</title>
+      <alt>Copella Orange</alt>
+      <url>../images/juices/copella-orange.jpg</url>
+    </image>
+    <ingredients>Water, oranges</ingredients>
+    <link>
+      <url>https://www.copellafruitjuice.co.uk/our-juices/juices#</url>
+    </link>
+    <facts>Best in the morning.</facts>
+  </product_item>
+
+  <product_item>
+    <product_name>Copella apple and mango</product_name>
+    <company_name>Pepsico</company_name>
+    <nutritional_content>
+      <fats>0</fats>
+      <carbohydrates>33</carbohydrates>
+      <protein>11</protein>
+    </nutritional_content>
+    <image>
+      <title>Copella apple and mango</title>
+      <alt>Copella apple and mango</alt>
+      <url>../images/juices/copella-apple-and-mango.jpg</url>
+    </image>
+    <ingredients>Water, apples, mango, sugar</ingredients>
+    <link>
+      <url>https://www.copellafruitjuice.co.uk/our-juices/juices#</url>
+    </link>
+    <facts>Taste better when cold.</facts>
+  </product_item>
+
+  <product_item>
+    <product_name>Innocent Orange</product_name>
+    <company_name>The Coca-Cola Company</company_name>
+    <nutritional_content>
+      <fats>0</fats>
+      <carbohydrates>73</carbohydrates>
+      <protein>11</protein>
+    </nutritional_content>
+    <image>
+      <title>Innocent Orange</title>
+      <alt>Innocent Orange</alt>
+      <url>../images/juices/innocent-orange.jpg</url>
+    </image>
+    <ingredients>Water, oranges</ingredients>
+    <link>
+      <url>https://www.innocentdrinks.co.uk/things-we-make/juices/juice/smooth-orange-juice</url>
+    </link>
+    <facts>Taste better when cold.</facts>
+  </product_item>
+
+  <product_item>
+    <product_name>Innocent Apple Juice</product_name>
+    <company_name>The Coca-Cola Company</company_name>
+    <nutritional_content>
+      <fats>0</fats>
+      <carbohydrates>73</carbohydrates>
+      <protein>15</protein>
+    </nutritional_content>
+    <image>
+      <title>Innocent Apple Juice</title>
+      <alt>Innocent Apple Juice</alt>
+      <url>../images/juices/innocent-apple-juice.jpg</url>
+    </image>
+    <ingredients>Water, apples</ingredients>
+    <link>
+      <url>https://www.innocentdrinks.co.uk/things-we-make/juices/juice/apple-juice</url>
+    </link>
+    <facts>Taste better when cold.</facts>
+  </product_item>
+
+  <product_item>
+    <product_name>Sunny D</product_name>
+    <company_name>Dr Pepper Snapple Group</company_name>
+    <nutritional_content>
+      <fats>0</fats>
+      <carbohydrates>83</carbohydrates>
+      <protein>21</protein>
+    </nutritional_content>
+    <image>
+      <title>Sunny D</title>
+      <alt>Sunny D</alt>
+      <url>../images/juices/sunny-d.jpg</url>
+    </image>
+    <ingredients>Water, oranges</ingredients>
+    <link>
+      <url>http://www.sunnyd.com/product/orange-2/</url>
+    </link>
+    <facts>Taste better when cold.</facts>
+  </product_item>
+</products>

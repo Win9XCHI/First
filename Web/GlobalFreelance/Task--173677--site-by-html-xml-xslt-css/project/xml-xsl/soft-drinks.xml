@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="soft-drinks.xsl" ?>
+
+<products>
+  <product_item>
+    <product_name>Coca-Cola</product_name>
+    <company_name>The Coca-Cola Company</company_name>
+    <nutritional_content>
+      <fats>12</fats>
+      <carbohydrates>33</carbohydrates>
+      <protein>11</protein>
+    </nutritional_content>
+    <image>
+      <title>Coca-Cola</title>
+      <alt>Coca-Cola</alt>
+      <url>../images/soft-drinks/coca-cola.jpg</url>
+    </image>
+    <ingredients>Water</ingredients>
+    <link>
+      <url>http://www.coca-colaproductfacts.com/en/coca-cola-products/coca-cola/</url>
+    </link>
+    <facts>Taste better when cold.</facts>
+  </product_item>
+
+  <product_item>
+    <product_name>Diet Cola</product_name>
+    <company_name>The Coca-Cola Company</company_name>
+    <nutritional_content>
+      <fats>12</fats>
+      <carbohydrates>33</carbohydrates>
+      <protein>11</protein>
+    </nutritional_content>
+    <image>
+      <title>Diet Cola</title>
+      <alt>Diet Cola</alt>
+      <url>../images/soft-drinks/diet-cola.jpg</url>
+    </image>
+    <ingredients>Water</ingredients>
+    <link>
+      <url>http://www.coca-colaproductfacts.com/en/coca-cola-products/diet-coke/</url>
+    </link>
+    <facts>Taste better when cold.</facts>
+  </product_item>
+
+  <product_item>
+    <product_name>Pepsi</product_name>
+    <company_name>Pepsico</company_name>
+    <nutritional_content>
+      <fats>12</fats>
+      <carbohydrates>33</carbohydrates>
+      <protein>11</protein>
+    </nutritional_content>
+    <image>
+      <title>Pepsi</title>
+      <alt>Pepsi</alt>
+      <url>../images/soft-drinks/pepsi.png</url>
+    </image>
+    <ingredients>Water</ingredients>
+    <link>
+      <url>http://www.pepsicobeveragefacts.com/Home/Product?formula=35005%2A26%2A01-01&amp;form=RTD&amp;size=20
+</url>
+    </link>
+    <facts>Taste better when cold.</facts>
+  </product_item>
+
+  <product_item>
+    <product_name>Diet Pepsi</product_name>
+    <company_name>Pepsico</company_name>
+    <nutritional_content>
+      <fats>12</fats>
+      <carbohydrates>33</carbohydrates>
+      <protein>11</protein>
+    </nutritional_content>
+    <image>
+      <title>Diet Pepsi</title>
+      <alt>Diet Pepsi</alt>
+      <url>../images/soft-drinks/diet-pepsi.jpg</url>
+    </image>
+    <ingredients>Water</ingredients>
+    <link>
+      <url>http://www.pepsicobeveragefacts.com/Home/Product?formula=F0000003519&amp;form=RTD&amp;size=20</url>
+    </link>
+    <facts>Taste better when cold.</facts>
+  </product_item>
+
+  <product_item>
+    <product_name>Sprite</product_name>
+    <company_name>The Coca-Cola Company</company_name>
+    <nutritional_content>
+      <fats>12</fats>
+      <carbohydrates>33</carbohydrates>
+      <protein>11</protein>
+    </nutritional_content>
+    <image>
+      <title>Sprite</title>
+      <alt>Sprite</alt>
+      <url>../images/soft-drinks/sprite.jpg</url>
+    </image>
+    <ingredients>Water</ingredients>
+    <link><url>http://www.coca-colaproductfacts.com/en/coca-cola-products/sprite/</url></link>
+    <facts>Taste better when cold.</facts>
+  </product_item>
+
+  <product_item>
+    <product_name>Fanta Orange</product_name>
+    <company_name>The Coca-Cola Company</company_name>
+    <nutritional_content>
+      <fats>12</fats>
+      <carbohydrates>33</carbohydrates>
+      <protein>11</protein>
+    </nutritional_content>
+    <image>
+      <title>Coca-Cola</title>
+      <alt>Coca-Cola</alt>
+      <url>../images/soft-drinks/fanta-orange.jpg</url>
+    </image>
+    <ingredients></ingredients>
+    <link>
+      <url>http://www.coca-colaproductfacts.com/en/coca-cola-products/fanta/</url>
+    </link>
+    <facts>Taste better when cold.</facts>
+  </product_item>
+
+  <product_item>
+    <product_name>Fanta Fruit Twist</product_name>
+    <company_name>The Coca-Cola Company</company_name>
+    <nutritional_content>
+      <fats>12</fats>
+      <carbohydrates>33</carbohydrates>
+      <protein>11</protein>
+    </nutritional_content>
+    <image>
+      <title>Fanta Fruit Twist</title>
+      <alt>Fanta Fruit Twist</alt>
+      <url>../images/soft-drinks/fanta-fruit-twist.jpg</url>
+    </image>
+    <ingredients></ingredients>
+    <link>
+      <url>http://www.coca-colaproductfacts.com/en/coca-cola-products/fanta-strawberry/</url>
+    </link>
+    <facts>Taste better when cold.</facts>
+  </product_item>
+
+  <product_item>
+    <product_name>Irn-Bru</product_name>
+    <company_name>The Coca-Cola Company</company_name>
+    <nutritional_content>
+      <fats>12</fats>
+      <carbohydrates>33</carbohydrates>
+      <protein>11</protein>
+    </nutritional_content>
+    <image>
+      <title>Irn-Bru</title>
+      <alt>Irn-Bru</alt>
+      <url>../images/soft-drinks/irn-bru.jpg</url>
+    </image>
+    <ingredients></ingredients>
+    <link>
+      <url>http://www.agbarr.co.uk/our-brands/irn-bru/</url>
+    </link>
+    <facts>Taste better when cold.</facts>
+  </product_item>
+
+  <product_item>
+    <product_name>Schweppes Lemonade</product_name>
+    <company_name>The Coca-Cola Company</company_name>
+    <nutritional_content>
+      <fats>12</fats>
+      <carbohydrates>33</carbohydrates>
+      <protein>11</protein>
+    </nutritional_content>
+    <image>
+      <title>Schweppes Lemonade</title>
+      <alt>Schweppes Lemonade</alt>
+      <url>../images/soft-drinks/schweppes-lemonade.jpg</url>
+    </image>
+    <ingredients></ingredients>
+    <link>
+      <url>http://www.coca-cola.co.uk/drinks/schweppes-lemonade/schweppes-lemonade</url>
+    </link>
+    <facts>Taste better when cold.</facts>
+  </product_item>
+
+</products>

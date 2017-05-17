@@ -1,0 +1,111 @@
+
+/**
+ * Styles related to project.
+ */
+
+html, body, h1, ul, div {
+	margin: 0;
+	padding: 0;
+}
+
+.main-wrap {
+	width: 80%;
+	margin: 0 auto;
+}
+
+.logo-wrap {
+	margin: 30px 0;
+}
+
+#logo {
+	height: 50px;
+}
+
+#logo img {
+	width: 200px;
+}
+
+#navigation {
+	margin: 30px 0 0 0;
+	padding: 0 1em;
+	background: #1e69cc;
+	height: 3em;
+	height: 50px;
+	list-style: none;
+}
+
+#navigation > li {
+	float: left;
+	height: 100%;
+	margin-right: 0.5em;
+	padding: 0 1em;
+}
+
+#navigation > li > a {
+	float: left;
+	height: 100%;
+	color: white;
+	text-decoration: none;
+	line-height: 3;
+	font-weight: bold;
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+	text-transform: uppercase;
+}
+
+#navigation > li > a:hover {
+	color: #d0c015;
+	text-decoration: underline;
+}
+
+#welcome-msg {
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+	font-size: 24px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+}
+
+#welcome-image {
+	text-align: center;
+}
+
+#welcome-image img {
+	margin-top: 40px;
+	width: 600px;
+}
+
+.products table {
+	width: 25%;
+	display: inline-block;
+	float: left;
+}
+
+.product-image {
+	width: 200px;
+	height: 200px;
+}
+
+.container {
+	height: 370px;
+}
+
+th, td > * {
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+	font-size: 14px;
+	font-style: normal;
+}
+
+th {
+	font-size: 16px;
+}
+
+td a {
+	text-decoration: none;
+	color: #1e69cc;
+}
+
+td a:hover {
+	text-decoration: none;
+	color: blue;
+	cursor: pointer;
+}

@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="energy-drinks.xsl" ?>
+
+<products>
+  <product_item>
+    <product_name>Red bull</product_name>
+    <company_name>Red Bull GmbH</company_name>
+    <nutritional_content>
+      <fats>12</fats>
+      <carbohydrates>33</carbohydrates>
+      <protein>11</protein>
+    </nutritional_content>
+    <image>
+      <title>Red bull</title>
+      <alt>Red bull</alt>
+      <url>../images/energy-drinks/red-bull.jpg</url>
+    </image>
+    <ingredients>Guarana, coffein</ingredients>
+    <link>
+      <url>http://energydrink-uk.redbull.com/ingredients-list</url>
+    </link>
+    <link>
+      <url>http://energydrink-uk.redbull.com/red-bull-energy-drink#whatsinside</url>
+    </link>
+    <link>
+      <url>http://energydrink-uk.redbull.com/red-bull-calories</url>
+    </link>
+    <facts>Taste better when cold.</facts>
+  </product_item>
+
+  <product_item>
+    <product_name>Monster Energy original</product_name>
+    <company_name>Monster Energy</company_name>
+    <nutritional_content>
+      <fats>12</fats>
+      <carbohydrates>33</carbohydrates>
+      <protein>11</protein>
+    </nutritional_content>
+    <image>
+      <title>Monster Energy original</title>
+      <alt>Monster Energy original</alt>
+      <url>../images/energy-drinks/monster-energy-original.jpg</url>
+    </image>
+    <ingredients>Water</ingredients>
+    <link>
+      <url>https://www.google.co.uk/search?q=mosnter+energy+calories&amp;oq=mosnter+energy+calories&amp;aqs=chrome..69i57j0l5.6486j0j4&amp;sourceid=chrome&amp;ie=UTF-8</url>
+    </link>
+    <link>
+      <url>https://www.monsterenergy.com/products/monster-energy</url>
+    </link>
+    <facts>Taste better when cold.</facts>
+  </product_item>
+
+  <product_item>
+    <product_name>Relentless</product_name>
+    <company_name>Monster Energy</company_name>
+    <nutritional_content>
+      <fats>12</fats>
+      <carbohydrates>33</carbohydrates>
+      <protein>11</protein>
+    </nutritional_content>
+    <image>
+      <title>Relentless</title>
+      <alt>Relentless</alt>
+      <url>../images/energy-drinks/relentless.jpg</url>
+    </image>
+    <ingredients>Water and cherry</ingredients>
+    <link>
+      <url>https://www.relentlessenergy.com/gb/en/products</url>
+    </link>
+    <link>
+      <url>https://www.nutracheck.co.uk/CaloriesIn/Product/28/Relentless+Cherry+Energy+Drink+500ml</url>
+    </link>
+    <facts>Taste better when cold.</facts>
+  </product_item>
+
+  <product_item>
+    <product_name>Lucozade orange</product_name>
+    <company_name>Suntory</company_name>
+    <nutritional_content>
+      <fats>12</fats>
+      <carbohydrates>33</carbohydrates>
+      <protein>11</protein>
+    </nutritional_content>
+    <image>
+      <title>Lucozade orange</title>
+      <alt>Lucozade orange</alt>
+      <url>../images/energy-drinks/lucozade-orange.jpg</url>
+    </image>
+    <ingredients>Water</ingredients>
+    <link>
+      <url>https://www.lucozadeenergy.com/our-products/orange/</url>
+    </link>
+    <facts>Taste better when cold.</facts>
+  </product_item>
+
+  <product_item>
+    <product_name>Powerade</product_name>
+    <company_name>The Coca-Cola Company</company_name>
+    <nutritional_content>
+      <fats>12</fats>
+      <carbohydrates>33</carbohydrates>
+      <protein>11</protein>
+    </nutritional_content>
+    <image>
+      <title>Powerade</title>
+      <alt>Powerade</alt>
+      <url>../images/energy-drinks/powerade.jpg</url>
+    </image>
+    <ingredients>Water</ingredients>
+    <link>
+      <url>https://www.relentlessenergy.com/gb/en/products</url>
+    </link>
+    <link>
+      <url>http://www.coca-colaproductfacts.com/en/coca-cola-products/powerade/</url>
+    </link>
+    <facts>Taste better when cold.</facts>
+  </product_item>
+
+  <product_item>
+    <product_name>Mountain Dew original</product_name>
+    <company_name>Pepsico</company_name>
+    <nutritional_content>
+      <fats>12</fats>
+      <carbohydrates>33</carbohydrates>
+      <protein>11</protein>
+    </nutritional_content>
+    <image>
+      <title>Mountain Dew original</title>
+      <alt>Mountain Dew original</alt>
+      <url>../images/energy-drinks/mountain-dew.jpg</url>
+    </image>
+    <ingredients>Water and cherry</ingredients>
+    <link>
+      <url>http://www.pepsicobeveragefacts.com/Home/Product?formula=44316*01*01-07&amp;form=RTD&amp;size=20</url>
+    </link>
+    <facts>Taste better when cold.</facts>
+  </product_item>
+</products>
