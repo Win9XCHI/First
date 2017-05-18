@@ -1,0 +1,22 @@
+Task Description:
+
+Write a client server program in C/C++. 
+
+Client creates a connection with the server and sends its name and password to the server.
+
+Server has a text file, containing name and passwords of different users.
+
+If the user name and password is found correct, the server reply back with a 
+message “Authenticated” otherwise send a reply “Wrong username/password” to the client. 
+
+Send the code of client and server side, as well as the screen shots of how server 
+and client communicate with each other.
+
+
+
+Example of a serverside file:
+
+username password
+ibrahim  abc123
+asim     a1b2c3
+ikram    123abc
