@@ -2,7 +2,7 @@
 #include <string>
 #include <cstring>
 #include <fstream>
-#include <map>	
+#include <map>
 #include <vector>
 
 using namespace std;
@@ -12,6 +12,20 @@ unsigned long sdbm(unsigned char *str);
 unsigned long loselose(unsigned char *str);
 
 //*** Your hash function ***
+unsigned int MyHash(unsigned char *str)
+{
+
+	unsigned int hash = 0;
+
+	for(; *str; str++)
+	{
+		hash += (unsigned char)(*str);
+		hash -= (hash << 13) | (hash >> 19);
+	}
+
+	return hash;
+
+}
 
 void printCollisions(string name, map<unsigned long, vector<string> > & keys);
 
@@ -24,6 +38,7 @@ int main()
 	map<unsigned long, vector<string> > djb2Keys;
 	map<unsigned long, vector<string> > sdbmKeys;
 	map<unsigned long, vector<string> > loseloseKeys;
+	map<unsigned long, vector<string> > MyHashKeys;
 
 	ifstream fin;
 	char buf[MAX_CHARS_PER_LINE];
@@ -50,6 +65,8 @@ int main()
 		hkey = loselose((unsigned char *)buf);
 		loseloseKeys[hkey].push_back(word);
 
+		hkey = MyHash((unsigned char *)buf);
+		MyHashKeys[hkey].push_back(word);
 		//*** Test your has functions here ***
 
 	}
@@ -59,8 +76,8 @@ int main()
 	printCollisions("djb2", djb2Keys);
 	printCollisions("sdbm", sdbmKeys);
 	printCollisions("loselose", loseloseKeys);
+	printCollisions("MyHash", MyHashKeys);
 
-	system("pause");
 	return 0;
 }
 
@@ -110,17 +127,18 @@ void printCollisions(string name, map<unsigned long, vector<string> > & keys)
 	int collisions = 0;
 
 	cout << name << " Collision List:" << endl << endl;
+
 	for (map<unsigned long, vector<string>>::iterator it = keys.begin();
-			it != keys.end(); ++it) {
-		if (it->second.size() > 1)
-		{
+	     it != keys.end(); ++it) {
+
+		if (it->second.size() > 1) {
 			collisions += (it->second.size() - 1);
 
 			cout << "Hash key " << it->first << " occurs "
-					<< it->second.size() << " times." << endl;
+			     << it->second.size() << " times." << endl;
 
 			for (vector<string>::iterator itr = it->second.begin();
-					itr != it->second.end(); ++itr) {
+			     itr != it->second.end(); ++itr) {
 				cout << *itr << " ";
 			}
 

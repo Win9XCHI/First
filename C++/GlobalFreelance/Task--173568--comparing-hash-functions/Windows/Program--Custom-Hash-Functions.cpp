@@ -2,7 +2,7 @@
 #include <string>
 #include <cstring>
 #include <fstream>
-#include <map>	
+#include <map>
 #include <vector>
 
 using namespace std;
@@ -78,7 +78,7 @@ int main()
 	printCollisions("loselose", loseloseKeys);
 	printCollisions("MyHash", MyHashKeys);
 
-	system("pause");
+	//system("pause");
 	return 0;
 }
 
@@ -128,17 +128,18 @@ void printCollisions(string name, map<unsigned long, vector<string> > & keys)
 	int collisions = 0;
 
 	cout << name << " Collision List:" << endl << endl;
+
 	for (map<unsigned long, vector<string>>::iterator it = keys.begin();
-			it != keys.end(); ++it) {
-		if (it->second.size() > 1)
-		{
+	     it != keys.end(); ++it) {
+
+		if (it->second.size() > 1) {
 			collisions += (it->second.size() - 1);
 
 			cout << "Hash key " << it->first << " occurs "
-					<< it->second.size() << " times." << endl;
-			
+			     << it->second.size() << " times." << endl;
+
 			for (vector<string>::iterator itr = it->second.begin();
-					itr != it->second.end(); ++itr) {
+			     itr != it->second.end(); ++itr) {
 				cout << *itr << " ";
 			}
 
