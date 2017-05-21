@@ -89,35 +89,35 @@ int fibonacci_search(T array[], int size, T key)
 
     if (nn != size)
     { 
-			k = 0;
+		k = 0;
 
-			while ( _fib[k] < size )
-			{
-				k++;
-			}
+		while ( _fib[k] < size )
+		{
+			k++;
+		}
 
-			kk = k;
-			nn = size;
+		kk = k;
+		nn = size;
     }
     else {
-			k = kk;
-		}
+		k = kk;
+	}
 
     while ( k > 0 )
     {
-			pos = inf + _fib[--k];
-			if ( (pos >= size) || (key < array[pos]) );
-			else if ( key > array[pos] )
-			{
-        inf = pos + 1;
-        k--;
-      }
-      else {
-        return pos;
-      }
-    }
+		pos = inf + _fib[--k];
+		if ( (pos >= size) || (key < array[pos]) );
+		else if ( key > array[pos] )
+		{
+			inf = pos + 1;
+			k--;
+		}
+		else {
+			return pos;
+		}
+	}
 
-    return -1;
+	return -1;
 }
 
 /**
