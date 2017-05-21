@@ -84,11 +84,11 @@ int sequential_search(T array[], int size, T value)
 template<class T>
 int fibonacci_search(T array[], int size, T key)
 { 
-    int inf = 0, pos, k;
-    static int kk= -1, nn = -1;
+	int inf = 0, pos, k;
+	static int kk= -1, nn = -1;
 
-    if (nn != size)
-    { 
+	if (nn != size)
+	{ 
 		k = 0;
 
 		while ( _fib[k] < size )
@@ -98,13 +98,13 @@ int fibonacci_search(T array[], int size, T key)
 
 		kk = k;
 		nn = size;
-    }
-    else {
+	}
+	else {
 		k = kk;
 	}
 
-    while ( k > 0 )
-    {
+	while ( k > 0 )
+	{
 		pos = inf + _fib[--k];
 		if ( (pos >= size) || (key < array[pos]) );
 		else if ( key > array[pos] )
