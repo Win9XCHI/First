@@ -1,0 +1,33 @@
+Task Description:
+
+Problem: A Simple program is needed to keep track phone numbers. 
+This program should allow you to enter a contact name and find that 
+contact’s phone number. When a contact is found, it is considered 
+the current contact. The current contacts Phone number can be changed 
+if needed. 
+
+The Current contact may also be deleted. Names are considered Primary Key 
+data in this structure and may not be duplicated or manipulated. 
+Program should also allow you to print an alphabetical listing of 
+contacts by “last name, first name”.
+
+Design: 
+An interactive menu should give the following options:
+  1.	Find Contact
+  2.	Display current contact
+  3.	Add Contact
+  4.	Delete Current Contact
+  5.	Display Contact List
+  6.	Quit.
+
+Use a Binary Sorting Tree Data structure. Each node in the tree will be 
+a contact object that holds the last name, the first name and the phone number 
+of the contact. Additionally there are left and right pointers to additional contacts. 
+
+The Address Book object will manage the tree (add, sort, read and delete nodes).
+The find function will search for a last name first name combination, 
+if found it will set the current pointer to that contact and return a true value.
+Display Current will display the first and last name and the phone number of the current.
+
+The sample (zip file) uses custom implementation of binary search tree. So please do the same.
+
