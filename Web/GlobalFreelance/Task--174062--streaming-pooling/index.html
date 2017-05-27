@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="/socket.io/socket.io.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script>
+      function timeConverter(UNIX_timestamp){
+        var a = new Date(UNIX_timestamp * 1000);
+        var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+        var year   = a.getFullYear();
+        var month  = months[a.getMonth()];
+        var date   = a.getDate();
+        var hour   = a.getHours();
+        var min    = a.getMinutes();
+        var time = date + ' ' + month + ' ' + year + ' ' + hour + ':' + min;
+
+        return time.toString();
+      }
+
+      // Variables.
+      var setOfPoints = [],
+          i = 0,
+          socket = io.connect('http://node.dev:3000');
+
+      socket.on('chartData', function (data) {
+        // Parse incoming JSON point into desirable format.
+        var point = JSON.parse(data);
+        var datetime = timeConverter(point.t_time);
+        setOfPoints[i] = [datetime, point.t_data];
+        ++i;
+      });
+
+      // Draw a Google Chart.
+      google.charts.load('current', {'packages':['bar']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Time');
+        data.addColumn('number', 'Data');
+        data.addRows(setOfPoints);
+
+        var options = {
+          chart: {
+            title: 'Company Performance',
+            subtitle: 'XYZ Company Profit: 2017'
+          },
+          bars: 'horizontal'
+        };
+
+        var chart = new google.charts.Bar(document.getElementById('streaming-chart'));
+        chart.draw(data, google.charts.Bar.convertOptions(options));
+      }
+
+      // Re-draw a chart after data was pushed to client.
+      setInterval(function () {
+        drawChart();
+      }, 2500);
+
+    </script>
+    <style>
+      #streaming-chart { height: 600px; }
+    </style>
+  </head>
+
+  <body>
+      <!--Div that will hold the bar chart-->
+      <h1>Streaming data from server to client by websocket</h1>
+      <div id="streaming-chart"></div>
+  </body>
+</html>
