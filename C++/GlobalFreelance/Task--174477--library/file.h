@@ -21,7 +21,7 @@ int readFromFile(int *data, unsigned int size, const char *filename) {
 int writeToFile(const int *data, unsigned int size, const char *filename) {
 	ofstream inFile;
 	inFile.open(filename);
-	int size_t = 0;
+	unsigned int size_t = 0;
 	
 	while (inFile << data[size_t] && size != size_t + 1) {
 		inFile << endl;

@@ -25,7 +25,7 @@ int getMedianOf(const int arr[], unsigned int size) {
 	int *NewArray = new int[size];
 	int median;
 	
-	for (int i = 0; i < size; i++) {
+	for (unsigned int i = 0; i < size; i++) {
 		NewArray[i] = arr[i];
 	}
 	qsort(NewArray, size, sizeof(int), compare_a);
@@ -42,12 +42,12 @@ double getSDOf(const int arr[], unsigned int size) {
 	double average = 0, dispersion = 0;
 	int *NewArray = new int[size];
 	
-	for (int i = 0; i < size; i++) {
+	for (unsigned int i = 0; i < size; i++) {
 		average += arr[i];
 	}
 	average /= size;
 	
-	for (int i = 0; i < size; i++) {
+	for (unsigned int i = 0; i < size; i++) {
 		NewArray[i] = arr[i] - average;
 		dispersion += pow(NewArray[i], 2);
 	}
@@ -59,7 +59,7 @@ double getSDOf(const int arr[], unsigned int size) {
 long long getSumOf(const int arr[], unsigned int size) {
 	long long sum = 0;
 	
-	for (int i = 0; i < size; i++) {
+	for (unsigned int i = 0; i < size; i++) {
 		sum += arr[i];
 	}
 	return sum;
@@ -69,12 +69,12 @@ int isArrSorted(const int arr[], unsigned int size) {
 	int *NewArray = new int[size];
 	bool flag = false;
 	
-	for (int i = 0; i < size; i++) {
+	for (unsigned int i = 0; i < size; i++) {
 		NewArray[i] = arr[i];
 	}
 	qsort(NewArray, size, sizeof(int), compare_a);
 	
-	for (int i = 0; i < size; i++) {
+	for (unsigned int i = 0; i < size; i++) {
 		if (arr[i] == NewArray[i]) {
 			
 		}
@@ -90,7 +90,7 @@ int isArrSorted(const int arr[], unsigned int size) {
 	}
 	int j = size;
 	
-	for (int i = 0; i < size; i++) {
+	for (unsigned int i = 0; i < size; i++) {
 		if (arr[j] == NewArray[i]) {
 			j--;
 		}
@@ -102,30 +102,31 @@ int isArrSorted(const int arr[], unsigned int size) {
 		return -1;
 	}
 	delete []NewArray;
+
 	return 0;
 }
 
 int isArrSame(const int arr1[], const int arr2[], unsigned int size) {
 	
-	for (int i = 0; i < size; i++) {
+	for (unsigned int i = 0; i < size; i++) {
 		if (arr1[i] != arr2[i]) {
 			return 0;
 		}
 	}
+
 	return 1;
 }
 
 void fillWithRandom(int data[], unsigned int size, int min, int max) {
 
-	for ( int i = 0; i < size; i++ ) {
+	for (unsigned int i = 0; i < size; i++ ) {
 		srand( time( NULL )+i ); //Dynamic random
 		data [i] = rand() % min + (max - min);
 	}
 }
 
 void fillWithVal(int data[], unsigned int size, int value) {
-	
-	for (int i = 0; i < size; i++) {
+	for (unsigned int i = 0; i < size; i++) {
 		data[i] = value;
 	}
 }

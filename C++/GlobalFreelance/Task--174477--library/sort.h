@@ -264,7 +264,8 @@ int testSort(int check) {
 			break;
 		}
 	}
-	
+
+	return 0;
 }
 
 #endif

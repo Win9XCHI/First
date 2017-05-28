@@ -6,9 +6,9 @@
 using namespace std;
 
 int function1(const int arr[], unsigned int size) {
-	int Even(0), Odd(0);
+	int Even(0);
 	
-	for (int i = 0; i < size; i++) {
+	for (unsigned int i = 0; i < size; i++) {
 		if (arr[i] % 2 == 0) {
 			Even++;
 		}
@@ -20,7 +20,7 @@ int function2(const int arr1[], const int arr2[], unsigned int size) {
 	bool flag = false;
 	int point = -1;
 	
-	for (int i = 0; i < size; i++) {
+	for (unsigned int i = 0; i < size; i++) {
 		if (arr1[i] != arr2[i]) {
 			flag = true;
 		}
@@ -43,7 +43,7 @@ int function2(const int arr1[], const int arr2[], unsigned int size) {
 
 void function3(int arr[], unsigned int size, int value1, int value2) {
 	
-	for (int i = 0; i < size; i++) {
+	for (unsigned int i = 0; i < size; i++) {
 		if (value1 == arr[i]) {
 			arr[i] = value2;
 		}
