@@ -5,15 +5,15 @@
 #include <cstdlib>
 #include <cmath>
 #include <ctime>
+
 using namespace std;
 
 void printArr(const int arr[], int size) {
-	cout << endl << "     Array" << endl;
+	cout << endl << "Array: ";
+
 	for (int i = 0; i < size; i++) {
 		cout << arr[i];
-		if (i != size - 1) {
-			cout << ", ";
-		}
+		if (i != size - 1) cout << ", ";
 	}
 }
 
@@ -45,15 +45,18 @@ double getSDOf(const int arr[], unsigned int size) {
 	for (unsigned int i = 0; i < size; i++) {
 		average += arr[i];
 	}
+
 	average /= size;
 	
 	for (unsigned int i = 0; i < size; i++) {
 		NewArray[i] = arr[i] - average;
 		dispersion += pow(NewArray[i], 2);
 	}
+
 	dispersion /= size;
 	delete []NewArray;
-	return pow(dispersion, 1/2);
+
+	return pow(dispersion, 1 / 2);
 }
 
 long long getSumOf(const int arr[], unsigned int size) {
@@ -83,13 +86,14 @@ int isArrSorted(const int arr[], unsigned int size) {
 		}
 	}
 	if (!flag) {
+		delete []NewArray;
 		return 1;
 	}
 	else {
 		flag = false;
 	}
-	int j = size;
-	
+
+	int j = size - 1;
 	for (unsigned int i = 0; i < size; i++) {
 		if (arr[j] == NewArray[i]) {
 			j--;
@@ -98,11 +102,13 @@ int isArrSorted(const int arr[], unsigned int size) {
 			flag = true;
 		}
 	}
+
 	if (!flag) {
+		delete []NewArray;
 		return -1;
 	}
-	delete []NewArray;
 
+	delete []NewArray;
 	return 0;
 }
 
@@ -120,7 +126,7 @@ int isArrSame(const int arr1[], const int arr2[], unsigned int size) {
 void fillWithRandom(int data[], unsigned int size, int min, int max) {
 
 	for (unsigned int i = 0; i < size; i++ ) {
-		srand( time( NULL )+i ); //Dynamic random
+		srand( time( NULL ) + i ); // Dynamic random.
 		data [i] = rand() % min + (max - min);
 	}
 }
@@ -132,49 +138,53 @@ void fillWithVal(int data[], unsigned int size, int value) {
 }
 
 int testArray() {
-	int arr[10] = {2,5,1,-4,2,0,5,1,9,4};
-	int arr1[10] = {1,6,0,-3,3,1,4,2,8,6};
-	int arr2[10] = {1,6,0,-3,3,1,4,2,8,6};
-	printArr(arr,10);
-	cout << endl << "Median = " << getMedianOf(arr,10);
-	cout << endl << "Mean = " << getMeanOf(arr,10);
-	cout << endl << "SDO = " << getSDOf(arr,10);
-	cout << endl << "Sum = " << getSumOf(arr,10);
-	//
-	//qsort(arr, 10, sizeof(int), compare_a);
-	//
-	if (isArrSorted(arr,10) == 1) {
-		cout << endl << "Sorted in increasing order!";
+	int arr[10]  = { 2, 5, 1, -4, 2, 0, 5, 1, 9, 4 };
+	int arr1[10] = { 1, 6, 0, -3, 3, 1, 4, 2, 8, 6 };
+	int arr2[10] = { 1, 6, 0, -3, 3, 1, 4, 2, 8, 6 };
+	printArr(arr, 10);
+
+	cout << endl << "Median = " << getMedianOf(arr, 10);
+	cout << endl << "Mean = " << getMeanOf(arr, 10);
+	cout << endl << "Standart Deviation = " << getSDOf(arr, 10);
+	cout << endl << "Sum = " << getSumOf(arr, 10);
+
+	if (isArrSorted(arr, 10) == 1) {
+		cout << endl << "Sorted in ascending order!";
+	}
+	else if (isArrSorted(arr, 10) == -1) {
+		cout << endl << "Sorted in descending order!";
 	}
 	else {
-		if (isArrSorted(arr,10) == -1) {
-			cout << endl << "Sorted in decreasing order!";
-		}
-		else {
-			cout << endl << "Array is not sorted!";
-		}
+		cout << endl << "Array is not sorted!";
 	}
-	if (isArrSame(arr1,arr2,10) == 1) {
+
+	if (isArrSame(arr1, arr2, 10) == 1) {
 		cout << endl << "Arrays are the same!";
 	}
 	else {
 		cout << endl << "Arrays not are the same!";
 	}
-	fillWithRandom(arr,10,200,400);
+
+	fillWithRandom(arr, 10, 200, 400);
 	
 	for (int i = 0; i < 10; i++) {
 		if (arr[i] < 200 || arr[i] > 400) {
 			return 0;
 		}
 	}
-	printArr(arr,10);
-	fillWithVal(arr,10,-9);
+
+	printArr(arr, 10);
+
+	fillWithVal(arr, 10, -9);
+
 	for (int i = 0; i < 10; i++) {
 		if (arr[i] != -9) {
 			return 0;
 		}
 	}
-	printArr(arr,10);
+
+	printArr(arr, 10);
+	
 	return 1;
 }
 
