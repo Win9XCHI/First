@@ -6,25 +6,23 @@
     <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no, maximum-scale=1" /> 
     
-    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
-    <script src="balloon_and_hint.js" type="text/javascript"></script>
-
     <!-- <script src="http://api-maps.yandex.ua/2.0/?load=package.full&lang=uk-UA&mode=debug" type="text/javascript"></script>
     <script src="//yandex.st/jquery/1.6.4/jquery.min.js" type="text/javascript"></script>
     <script src="balloon_and_hint.js" type="text/javascript"></script>-->
 </head>
 <body>
-<div id="content">
+  <div id="content">
     <div id="header">
-           <span id="logo">TheRightPath</span>
-        <a href="#">Пошук маршруту</a>/
-		<a href="#">Пошук станцій</a>/
-        <a href="#">БД потягів</a>/		
+      <span id="logo">TheRightPath</span>
+      <a href="#">Пошук маршруту</a>/
+		  <a href="#">Пошук станцій</a>/
+      <a href="#">БД потягів</a>/		
     </div>
+    
     <h1>Сервіс пошуку потягів та маршрутів «TheRightPath»</h1>
     <div id="center">
       <div id="selection">
-         <form>
+        <form>
           <p class="in">Ст. А </p><input > 
           <p class="in">Ст. Б </p><input > 
           <option class="Date"></option>
@@ -41,33 +39,39 @@
           <button class="type"></button>
           <button class="type"></button>
           <button class="type"></button>
-          <p><select>
-          <option class="transplant" valua="r1">Без пересадок</option>
-          <option class="transplant" valua="r2">З пересадками</option>
-          </select></p>
-          <p><select>
-          <option class="Sort" valua="r1">Швидкий</option>
-          <option class="Sort" valua="r2">Дешевий</option>
-          <option class="Sort" valua="r3">Час чекання пересадки</option>
-          </select></p>
           
+          <p>
+            <select>
+              <option class="transplant" value="r1">Без пересадок</option>
+              <option class="transplant" value="r2">З пересадками</option>
+            </select>
+          </p>
+          <p>
+            <select>
+              <option class="Sort" value="r1">Швидкий</option>
+              <option class="Sort" value="r2">Дешевий</option>
+              <option class="Sort" value="r3">Час чекання пересадки</option>
+            </select>
+          </p>
           
           <button class="computing"></button>
-          </form>
+        </form>
       </div>
        <!-- <img src="img/photo.png" id="avatar">-->
-       <div id="map" style="width: 750px; height: 500px"></div>
-       
-        <div id="box_text">
-            
-      
 
+      <div id="click_to_view_a_marker" style="background-color: #f1c278; width: 200px; height: 40px;">Click me to view a Kyiv</div>
+      <div id="map" style="width: 750px; height: 500px"></div>
        
-        </div>
+      <div id="box_text">
+      </div>
+
     </div>
-</div>
-<div id="footer">
+  </div>
+  <div id="footer">
     Copyright &copy; 2017/ <p>Керівник: , Розробник: Нікуліцов Є. Е.</p>
-</div>
+  </div>
+
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDYnxQlUA6bBNupyd0bsT253iPnpWckpSg&v=3.exp"></script>
+  <script src="balloon_and_hint.js" type="text/javascript"></script>
 </body>
 </html>
