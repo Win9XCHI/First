@@ -2,10 +2,10 @@ var map;
 		
 function initialize() {
     var mapOptions = {
-		zoom: 6,
-		center: new google.maps.LatLng(48.45, 35.02)
-	};
-	
+        zoom: 6,
+        center: new google.maps.LatLng(48.45, 35.02)
+    };
+
     map = new google.maps.Map(document.getElementById("map"), mapOptions);
 }
 
