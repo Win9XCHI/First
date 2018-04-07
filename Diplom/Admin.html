@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <title>TheRightPath</title>
+    <link rel="stylesheet" href="css/style_admin.css">
+    <link rel="stylesheet" type="text/css" href="css/jquery.minical.plain.css">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no, maximum-scale=1" />
+</head>
+
+<body>
+
+    <div id="content">
+
+        <div id="header">
+            <span id="logo"><a href="index.html">TheRightPath</a></span>
+            <a href="#" id="add">Додавання</a>/
+            <a href="#" id="edit">Редагування</a>/
+            <a href="#" id="delete">Видалення</a>/
+        </div>
+
+        <div id="center">
+            <div id="login_container">
+                <div id="form_container">
+                    <p class="login-text">Аутентифікація</p>
+                    <div id="center2">
+                        <input type='text' onFocus="if(this.value=='Логін')this.value=''" onblur="if(this.value=='')this.value='Логін'" name='username' value='Логін' class='text_input' id="loginn" autocomplete="off" />
+                        <input type='password' onFocus="if(this.value=='Пароль')this.value=''" onblur="if(this.value=='')this.value='Пароль'" name='password' value='Пароль' class='text_input' id="passwordd" autocomplete="off" />
+                        <div id='login' name='login'>
+                            <buttom id="co2">Вхід</buttom>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="ok" hidden="false">
+                <div id="selection">
+                    <h1 id="mes">Оберіть розділ</h1>
+                    <h1 id="a">Додавання</h1>
+                    <h1 id="r">Редагування</h1>
+                    <h1 id="d">Видалення</h1>
+                </div>
+
+                <div id="message">
+                    Строка повідомлень!
+                </div>
+
+                <div class="box" id="ad">
+
+                    <div class="inp" id="i1">
+                        <input type="text" name="num" id="num" placeholder="Введіть номер маршруту" required onclick="$(this).css ('border-color','#ccc')" required maxlength="5" autocomplete="off">
+                        <input type="text" name="St_1" id="St_1" placeholder="Введіть початкову станцію" required onclick="$(this).css ('border-color','#ccc')" required maxlength="30" autocomplete="off">
+                        <div id="kabsearchform1">
+                        </div>
+                        <input type="text" name="St_2" id="St_2" placeholder="Введіть кінцеву станцію" required onclick="$(this).css ('border-color','#ccc')" required maxlength="30" autocomplete="off">
+                        <div id="kabsearchform2">
+                        </div>
+                        <input type="text" name="Col" id="Col" placeholder="Введіть кількість станцій" required onclick="$(this).css ('border-color','#ccc')" min="1" maxlength="2" autocomplete="off">
+                        <input type="text" name="Time" id="Time" placeholder="Введіть час в дорозі (HH:MM)" required onclick="$(this).css ('border-color','#ccc')" minlength="5" maxlength="5" autocomplete="off">
+                        <input type="text" name="Col_V" id="Col_V" placeholder="Введіть кількість вагонів" required onclick="$(this).css ('border-color','#ccc')" min="1" maxlength="2" autocomplete="off">
+                        <select name="Type" id="Type">
+                 <option class="transplant" value="1">Швидкісний</option>
+                 <option class="transplant" value="2">Фірмовий</option>
+                 <option class="transplant" value="3">Швидкий</option>
+                 <option class="transplant" value="4">Пасажирський</option>
+                 <option class="transplant" value="5">Електричка</option>
+             </select>
+                        <button class="computing" id="computing1">Застосувати</button>
+                    </div>
+                    <div class="inp" id="i2">
+                        <input type="text" name="cod" id="cod" placeholder="Введіть код станції" required onclick="$(this).css ('border-color','#ccc')" minlength="6" maxlength="6" autocomplete="off">
+                        <input type="text" name="Time_1" id="Time_1" placeholder="Введіть час прибуття" required onclick="$(this).css ('border-color','#ccc')" minlength="5" maxlength="5" autocomplete="off">
+                        <input type="text" name="Time_2" id="Time_2" placeholder="Введіть час відбуття" required onclick="$(this).css ('border-color','#ccc')" minlength="5" maxlength="5" autocomplete="off">
+                        <button class="computing" id="computing2">Застосувати</button>
+                    </div>
+                    <div class="inp" id="i3">
+                        <input type="date" id="dat" name="dat" placeholder="Дата" required onclick="$(this).css ('border-color','#ccc')">
+
+                        <button class="computing" id="computing3">Застосувати</button>
+                    </div>
+                    <div class="inp" id="i4">
+                        <input type="text" name="cod_V" id="cod_V" placeholder="Введіть код вагону" required onclick="$(this).css ('border-color','#ccc')" minlength="7" maxlength="7" autocomplete="off">
+                        <select name="Type_V" id="Type_V">
+                 <option class="transplant" value="1">СВ</option>
+                 <option class="transplant" value="2">Люкс</option>
+                 <option class="transplant" value="3">Купе</option>
+                 <option class="transplant" value="4">Плацкарт</option>
+                 <option class="transplant" value="5">Сидячий 1-го класу</option>
+                 <option class="transplant" value="6">Сидячий 2-го класу</option>
+             </select>
+
+                        <button class="computing" id="computing4">Застосувати</button>
+                    </div>
+                    <div id="map"></div>
+                </div>
+
+                <div class="box" id="red">
+
+                    <div id="map"></div>
+                </div>
+
+                <div class="box" id="del">
+                    <button class="dcomputing" id="defoult">За замовчуванням</button>
+                    <div id="p1">
+                        <input type="text" name="num" id="numm" placeholder="Введіть номер маршруту" required onclick="$(this).css ('border-color','#ccc')" maxlength="5">
+                        <br>
+                        <br>
+                        <br>
+                        <span>
+                 <button class="dcomputing" id="delnum">Видалити весь маршрут</button>
+                 <button class="dcomputing" id="delStCarr">Видалити станцію чи вагон</button>
+                 <button class="dcomputing" id="delSchedul">Видалити дату в графіку</button>
+             </span>
+                    </div>
+                    <div id="p2">
+                        <input type="text" id="numS" placeholder="Введіть номер станції" required onclick="$(this).css ('border-color','#ccc')" minlength="6" maxlength="6">
+                        <br>
+                        <br>
+                        <br>
+                        <input type="text" id="numC" placeholder="Введіть номер вагону" required onclick="$(this).css ('border-color','#ccc')" minlength="7" maxlength="7">
+                        <br>
+                        <br>
+                        <br>
+                        <input type="date" id="datD" placeholder="Введіть дату" required onclick="$(this).css ('border-color','#ccc')">
+                        <br>
+                        <br>
+                        <br>
+
+                        <button class="dcomputing" id="dell">Видалити</button>
+                    </div>
+
+                </div>
+
+
+
+
+            </div>
+        </div>
+    </div>
+    <div id="footer">
+        Copyright &copy; 2017/
+        <p>Керівник: Гапоненко Н. В., Розробник: Нікуліцов Є. Е.</p>
+        <span style="width: 100px;"></span>
+
+    </div>
+
+    <script type="text/javascript" src="js/jquery-2.0.3.min.js"></script>
+    <script type="text/javascript" src="js/jquery.minical.plain.js"></script>
+    <script src="js/ajax/Admin.js" type="text/javascript"></script>
+    <script src="js/jquery-3.2.1.js" type="text/javascript"></script>
+    <script src="js/jquery-3.2.1.min.js" type="text/javascript"></script>
+</body>
+
+</html>

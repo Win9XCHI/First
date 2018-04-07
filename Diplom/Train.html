@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <title>TheRightPath</title>
+    <link rel="stylesheet" href="css/style_train.css">
+    <link rel="stylesheet" type="text/css" href="css/jquery.minical.plain.css">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no, maximum-scale=1" />
+</head>
+
+<body>
+    <div id="content">
+        <div id="header">
+            <span id="logo">TheRightPath</span>
+            <a href="index.html">Пошук маршруту</a>/
+            <a href="Station.html">Пошук по станції</a>/
+            <a href="#">БД потягів</a>/
+        </div>
+
+        <h1>Сервіс пошуку потягів та маршрутів «TheRightPath»</h1>
+        <div id="center">
+            <div id="selection">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="form_div">
+                                    <p>
+                                        Регаональна філія:
+                                        <select id="Fil" name="Fil">
+                                  <option class="transplant" value="1">Усі</option>
+                                  <option class="transplant" value="2">Одеська</option>
+                                  <option class="transplant" value="3">Південна</option>
+                                  <option class="transplant" value="4">Південно-Західна</option>
+                                  <option class="transplant" value="5">Придніпровська</option>
+                                  <option class="transplant" value="6">Донецька</option>
+                                  <option class="transplant" value="7">Львівська</option>
+                                </select>
+                                    </p>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="form_div">
+                                    <input class="view" id="v1" type="checkbox" name="v" value="1" checked title="Швидкісний">
+                                    <input class="view" id="v2" type="checkbox" name="v" value="2" checked title="Фірмовий">
+                                    <input class="view" id="v3" type="checkbox" name="v" value="3" checked title="Швидкий">
+                                    <input class="view" id="v4" type="checkbox" name="v" value="4" checked title="Пасажирський">
+                                    <input class="view" id="v5" type="checkbox" name="v" value="5" checked title="Електричка">
+                                </div>
+                            </td>
+                            <td>
+                                <div class="form_div">
+                                    <button id="computing">Застосувати</button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="map"></div>
+            <div id="box_text">
+            </div>
+        </div>
+    </div>
+    <div id="footer">
+        Copyright &copy; 2017/
+        <p>Керівник: Гапоненко Н. В., Розробник: Нікуліцов Є. Е.</p>
+        <a id="Admin" href="Admin.html"></a>
+    </div>
+
+    <script type="text/javascript" src="js/jquery-2.0.3.min.js"></script>
+    <script type="text/javascript" src="js/jquery.minical.plain.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDYnxQlUA6bBNupyd0bsT253iPnpWckpSg&v=3.exp"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="js/jquery-3.2.1.js" type="text/javascript"></script>
+    <script src="js/ajax/TrainForm.js" type="text/javascript"></script>
+</body>
+
+</html>
