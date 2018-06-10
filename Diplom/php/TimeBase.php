@@ -1,164 +1,107 @@
 <?php
 
 class TimeBase {
-    private $H;
-    private $M;
-    private $data;
+    private $T;
+    private $data = false;
     
     public function CheckData() {
         return $this->data;
+    }    
+    
+    public function SetTime($time) {
+        $this->T = new DateTime($time);
     }
     
-    public function SetH($time) {
-        $this->H = $time;
-        ChromePhp::log($this->H);
-    }
-    
-    public function SetM($time) {
-        $this->M = $time;
-    }
-
-    public function SetHH($time) {
-        $m = "";
-
-        for ($i = 0; $i < strlen($time); $i++) {
-            if ($time[$i] == ":") {
-                break;
+    public function sub($time) {
+        $TT = $this->T->diff($time->GetTimeT());
+        
+        $cont1 = $this->T->format('H.i');
+        $cont2 = $time->GetTimeT()->format('H.i');
+        
+        ChromePhp::log("sub", $cont1, $cont2);
+        
+        if($cont1 < $cont2) {
+            $this->data = true;
+            $t1 = explode('.', $cont1);
+            $t2 = explode('.', $cont2);
+            
+            $t1 = $t1[0] * 60 + $t1[1];
+            $t2 = $t2[0] * 60 + $t2[1];            
+            $h = (1440 - $t2 + $t1);            
+            $min = $h / 60;            
+            $min = explode('.', $min);            
+            $t1 = $min[0];            
+            $min = $h - ($min[0] * 60);            
+            $h = $t1;
+            
+            if (empty($min)) {
+                $TT = $h. ":00";
             }
             else {
-                $m[$i] = $time[$i];
+                if ($min < 10) {
+                    $TT = $h. ":0". $min;
+                }
+                else {
+                    $TT = $h. ":". $min;
+                }
+                
             }
         }
-        $this->H = $m;
-    }
-    public function SetMM($time) {
-        $flag = false;
-        $m = "";
-        $j = 0;
-
-        for ($i = 0; $i < strlen($time); $i++) {
-            if ($time[$i] == ":") {
-                $flag = true;
-                $i++;
-            }
-
-            if ($flag) {
-                $m[] = $time[$i];
-                if ($i == 3) {
-                    $m[] = '.';
+        else {
+            if ($TT->format('%i') < 10) {
+                if ($TT->format('%i') == "") {
+                    $TT = $TT->format('%H:00');
+                } else {
+                    $TT = $TT->format('%H:0%i');
                 }
             }
-        }
-        $this->M = $m;
-    }
-    public function GetH() {
-        return $this->H;
-    }
-    public function GetM() {
-        return $this->M;
-    }
-    public function GetT() {
-        $j = 0;
-        $f = "";
-        $flag = false;
-
-        $s = $this->H;
-        $s += ":";
-        $s .= $this->M;
-
-        for ($i = 0; $i < strlen($s); $i++) {
-            if ($s[$i] == '.') {
-                $flag = true;
-            }
-        }
-
-        for ($i = 0; $i < strlen($s); $i++) {
-            $s[$i] = s[$j];
-            $j++;
-            if ($s[$i] == '.') {
-                $i--;
-            }
-        }
-
-        if ($flag) {
-            for ($i = 0; $i < strlen($s); $i++) {
-                $f[$i] = $s[$i];
-            }
-        }
-        else {
-            for ($i = 0; $i < strlen($s); $i++) {
-                $f[$i] = $s[$i];
-            }
-            $f .= "0";
-        }
-
-        return $f;
-    }
-
-    public function __construct() {
-        $this->H = 0;
-        $this->M = 0;
-    }
-    /*public function TimeBase($i, $n) {
-        $this->H = $i;
-        $this->M = $n;
-    }
-    public function TimeBase($n) {
-        $flag = false;
-        $m = "";
-        $j = 0;
-
-        for ($i = 0; $i < strlen($n); $i++) {
-            if ($n[i] == ":") {
-                $flag = true;
-                $this->H = $m;
-                $m = "";
-            }
-
-            if (!$flag) {
-                $m[i] = $n[i];
-            }
             else {
-                $m[j] = $n[i];
-                $j++;
+                $TT = $TT->format('%H:%i');
             }
         }
-        $this->M = m;
-    }*/
+            
+        return $TT;
+        //return date("H:i", $TT);
+    }
     
-    public function sub($hour, $min) { // Overloads - operator (Склей массив)
-        $Ob = new TimeBase();
-ChromePhp::log( (float) $min, (float) $this->GetM());
-        if ($min > $this->GetM()) {
-    ChromePhp::log(($hour * 1) - ($this->GetH() * 1));
-            $Ob->SetH(abs($hour - $this->GetH()) - 1);
-    ChromePhp::log($min - $this->GetM());
-            $Ob->SetM($min - $this->GetM());
-    ChromePhp::log($hour, $this->GetH());
-        }
-        else {
-    ChromePhp::log(($hour * 1) - ($this->GetH() * 1));
-            $Ob->SetH(abs($hour - $this->GetH()));
-            $Ob->SetM($this->GetM() - $min);
-    ChromePhp::log($hour, $this->GetH());
-        }
-ChromePhp::log($Ob);
-        if ($hour > 12 && $this->GetH() < 12 ) {
-            $Ob->SetH($this->GetH() - $hour + 24);
-            $Ob->data = true;
+    public function subTime($time) {
+        $cont1 = $this->T->format('Hi');
+        $cont2 = $time->GetTimeT()->format('Hi');
+        
+        ChromePhp::log("subTime", $cont1, $cont2);
+        if($cont1 < $cont2) {
+            $this->data = true;
         }
         
-        ChromePhp::log($Ob);
+        $TT = $this->T->diff($time->GetTimeT());
 
-        return $Ob;
+        $cont = $TT->format('%H%i');
+            
+        return $cont;
+        //return abs($this->T->diff($time->GetTimeT()));
     }
-    public function assign_add($right) { // Overloads += (=)
-        $this->H = $right->GetH();
-        $this->M = $right->GetM();
-        $this->data = $right->CheckData();
-        return $this;
+    
+    public function add($time) {
+        $New = new DateTime($time);        
+        $this->T->add(new DateInterval("PT". $New->format('H'). "H". $New->format('i'). "M"));
     }
-
+    
+    public function GetTimeInt() {
+        
+        $TT = $this->T->format('Hi');
+        
+        return $TT;
+    }
+    
+    public function GetTime() {
+        return $this->T->format('H:i');
+        //return date("H:i", $this->T);
+    }
+    
+    private function GetTimeT() {
+        return $this->T;
+        //return date("H:i", $this->T);
+    }
 }
 
 ?>

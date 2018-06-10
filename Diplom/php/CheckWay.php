@@ -2,9 +2,12 @@
 include 'ChromePhp.php';
 include ('SearchTrain.php');
 
-ChromePhp::log('1');
-    $Search = new SearchTrain();   
-    echo $Search->HallWay($_POST); 
+    
+$Search = new SearchTrain();   
+$Res = $Search->HallWay($_POST);
+//ChromePhp::log($Res);
+header_remove('Set-Cookie');
+echo $Res;
 //echo $_POST;
 
                
