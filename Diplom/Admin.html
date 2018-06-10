@@ -32,7 +32,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> 
 
             <div id="ok" hidden="false">
                 <div id="selection">
@@ -60,16 +60,18 @@
                         <input type="text" name="Time" id="Time" placeholder="Введіть час в дорозі (HH:MM)" required onclick="$(this).css ('border-color','#ccc')" minlength="5" maxlength="5" autocomplete="off">
                         <input type="text" name="Col_V" id="Col_V" placeholder="Введіть кількість вагонів" required onclick="$(this).css ('border-color','#ccc')" min="1" maxlength="2" autocomplete="off">
                         <select name="Type" id="Type">
-                 <option class="transplant" value="1">Швидкісний</option>
-                 <option class="transplant" value="2">Фірмовий</option>
-                 <option class="transplant" value="3">Швидкий</option>
-                 <option class="transplant" value="4">Пасажирський</option>
-                 <option class="transplant" value="5">Електричка</option>
+                 <option class="transplant" value="Швидкісний">Швидкісний</option>
+                 <option class="transplant" value="Фірмовий">Фірмовий</option>
+                 <option class="transplant" value="Швидкий">Швидкий</option>
+                 <option class="transplant" value="Пасажирський">Пасажирський</option>
+                 <option class="transplant" value="Електричка">Електричка</option>
              </select>
                         <button class="computing" id="computing1">Застосувати</button>
                     </div>
                     <div class="inp" id="i2">
                         <input type="text" name="cod" id="cod" placeholder="Введіть код станції" required onclick="$(this).css ('border-color','#ccc')" minlength="6" maxlength="6" autocomplete="off">
+                        <div id="kabsearchform3">
+                        </div>
                         <input type="text" name="Time_1" id="Time_1" placeholder="Введіть час прибуття" required onclick="$(this).css ('border-color','#ccc')" minlength="5" maxlength="5" autocomplete="off">
                         <input type="text" name="Time_2" id="Time_2" placeholder="Введіть час відбуття" required onclick="$(this).css ('border-color','#ccc')" minlength="5" maxlength="5" autocomplete="off">
                         <button class="computing" id="computing2">Застосувати</button>
@@ -82,22 +84,75 @@
                     <div class="inp" id="i4">
                         <input type="text" name="cod_V" id="cod_V" placeholder="Введіть код вагону" required onclick="$(this).css ('border-color','#ccc')" minlength="7" maxlength="7" autocomplete="off">
                         <select name="Type_V" id="Type_V">
-                 <option class="transplant" value="1">СВ</option>
-                 <option class="transplant" value="2">Люкс</option>
-                 <option class="transplant" value="3">Купе</option>
+                 <option class="transplant" value="СВ">СВ</option>
+                 <option class="transplant" value="Люкс">Люкс</option>
+                 <option class="transplant" value="Купе">Купе</option>
                  <option class="transplant" value="4">Плацкарт</option>
-                 <option class="transplant" value="5">Сидячий 1-го класу</option>
-                 <option class="transplant" value="6">Сидячий 2-го класу</option>
+                 <option class="transplant" value="Сидячий 1-го класу">Сидячий 1-го класу</option>
+                 <option class="transplant" value="Сидячий 2-го класу">Сидячий 2-го класу</option>
              </select>
 
                         <button class="computing" id="computing4">Застосувати</button>
                     </div>
-                    <div id="map"></div>
                 </div>
 
                 <div class="box" id="red">
 
-                    <div id="map"></div>
+                   <div id="rr1">
+                       <input type="text" name="num" id="RedNum" placeholder="Введіть номер маршруту" required onclick="$(this).css ('border-color','#ccc')" maxlength="5">
+                       <button class="dcomputing" id="rednum">Ввести</button>
+                         <button class="dcomputing" id="NewRedNum">Ввести новий</button>
+                         <br>
+                        <br>
+                        <input type="text" id="ipST" placeholder="Введіть код станції" required onclick="$(this).css ('border-color','#ccc')" minlength="6" maxlength="6">
+                        <input type="text" id="COST" placeholder="Введіть координати станції" required onclick="$(this).css ('border-color','#ccc')" minlength="6" maxlength="50">
+                        <input type="text" id="NAMEST" placeholder="Введіть назву станції" required onclick="$(this).css ('border-color','#ccc')" minlength="2" maxlength="40">
+                        <select name="Type_V" id="BST">
+                 <option class="transplant" value="Донецька">Донецька</option>
+                 <option class="transplant" value="Львівська">Львівська</option>
+                 <option class="transplant" value="Одеська">Одеська</option>
+                 <option class="transplant" value="Придніпровська">Придніпровська</option>
+                 <option class="transplant" value="Південно-Західна">Південно-Західна</option>
+             </select>
+                       <br>
+                       <br>
+                        <button class="dcomputing" id="addRedSt">Додати</button>
+                        <button class="dcomputing" id="DelRedSt">Видалити</button>
+                    </div>
+                    
+                    <div id="rr2">
+                       <input type="date" id="datR" placeholder="Введіть дату" required onclick="$(this).css ('border-color','#ccc')">
+                       <br>
+                        <br>
+                        <br>
+                       <input type="text" id="numCR" placeholder="Введіть номер вагону" required onclick="$(this).css ('border-color','#ccc')" minlength="7" maxlength="7">
+                       <select name="Type_V" id="Type_RE">
+                 <option class="transplant" value="СВ">СВ</option>
+                 <option class="transplant" value="Люкс">Люкс</option>
+                 <option class="transplant" value="Купе">Купе</option>
+                 <option class="transplant" value="Плацкарт">Плацкарт</option>
+                 <option class="transplant" value="Сидячий 1-го класу">Сидячий 1-го класу</option>
+                 <option class="transplant" value="Сидячий 2-го класу">Сидячий 2-го класу</option>
+             </select>
+                       <br>
+                        <br>
+                        <br>
+                       <input type="text" id="numSR" placeholder="Введіть код станції" required onclick="$(this).css ('border-color','#ccc')" minlength="6" maxlength="6">
+                       <div id="kabsearchform4">
+                       </div>
+                       <span>
+                       <input type="text" name="Time_1" id="Time1" placeholder="Введіть час прибуття" required onclick="$(this).css ('border-color','#ccc')" minlength="5" maxlength="5" autocomplete="off">
+                        <input type="text" name="Time_2" id="Time2" placeholder="Введіть час відбуття" required onclick="$(this).css ('border-color','#ccc')" minlength="5" maxlength="5" autocomplete="off">
+                        <input type="text" name="Time_3" id="TADD" placeholder="Введіть час зсуву" required onclick="$(this).css ('border-color','#ccc')" minlength="5" maxlength="5" autocomplete="off">
+                        </span>
+                       <p>Після</p>
+                       <input type="text" id="numSR2" placeholder="Введіть код станції" required onclick="$(this).css ('border-color','#ccc')" minlength="6" maxlength="6">
+                       <div id="kabsearchform5">
+                       </div>
+                       <br>
+                       <button class="dcomputing" id="addRed">Додати</button>
+                    </div>
+                    
                 </div>
 
                 <div class="box" id="del">
@@ -115,6 +170,8 @@
                     </div>
                     <div id="p2">
                         <input type="text" id="numS" placeholder="Введіть номер станції" required onclick="$(this).css ('border-color','#ccc')" minlength="6" maxlength="6">
+                        <div id="kabsearchform6">
+                        </div>
                         <br>
                         <br>
                         <br>
@@ -139,8 +196,8 @@
         </div>
     </div>
     <div id="footer">
-        Copyright &copy; 2017/
-        <p>Керівник: Гапоненко Н. В., Розробник: Нікуліцов Є. Е.</p>
+        Copyright &copy; 2018/
+        <p>Керівник: Бабенко І.Б., Розробник: Нікуліцов Є. Е.</p>
         <span style="width: 100px;"></span>
 
     </div>

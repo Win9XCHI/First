@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>TheRightPath</title>
+    <link rel="stylesheet" href="css/style_payment.css">
+    <link rel="stylesheet" type="text/css" href="css/jquery.minical.plain.css">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no, maximum-scale=1" /> 
+</head>
+<body>
+  <div id="content">
+    
+    <div class="form" id="f1">
+        
+        <div id="head">
+            <p>Сплатити рахунок</p>
+        </div>
+        
+        <div id="Area">
+            
+            <div id="img">
+               <div class="log">
+                    <img src="images/logo-mastercard.png" alt="Mastercard" width="50" height="35"> 
+                </div>
+                <div class="log">
+                    <img src="images/logo-visa.png" alt="Visa" width="50" height="25"> 
+                </div>
+            </div>
+            
+            <div id="Pay">
+                <!--<p>Сума оплати</p>
+                <p>500,00 грн</p>-->
+            </div>
+            
+            <input type="text" name="CardNumber" id="CardNumber" placeholder="Номер карти" autocomplete="off" required onclick="$(this).css ('border-color','#ccc')" maxlength="16">
+            
+            <div id="TT">
+                <input type="text" name="dat" id="dat" placeholder="MM/YY" autocomplete="off" required onclick="$(this).css ('border-color','#ccc')" maxlength="5">
+
+                <input type="text" name="SecurityCode" id="SecurityCode" placeholder="Код безпеки" autocomplete="off" required onclick="$(this).css ('border-color','#ccc')" maxlength="10">
+            </div>
+            
+            <div id="computing">
+                
+                <!--<p>Сплатити 500,00 грн</p>-->
+            </div>
+            
+        </div>
+        
+    </div>
+    
+    
+    <div class="form" id="f2">
+        
+        <div id="Area1">
+            
+            <img id="img1" src="images/Q.png" alt="OK" width="50" height="35"> 
+            
+            <div id="Pay1">
+                <!--<p>500,00 грн</p>
+                <p>Ви успішно оплатили замовлення</p>-->
+            </div>
+            
+            <div id="cloase">
+                
+                <p>Закрити вікно</p>
+            </div>
+            
+        </div>
+        
+    </div>
+    
+  </div>
+  <div id="footer">
+    Copyright &copy; 2018/ <p>Керівник: Бабенко І.Б., Розробник: Нікуліцов Є. Е.</p>
+  </div>
+
+    <script type="text/javascript" src="js/jquery-2.0.3.min.js"></script>
+	<script type="text/javascript" src="js/jquery.minical.plain.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDYnxQlUA6bBNupyd0bsT253iPnpWckpSg&v=3.exp"></script>
+  <script src="js/ajax/Payment.js" type="text/javascript"></script>
+</body>
+</html>

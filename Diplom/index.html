@@ -15,7 +15,8 @@
             <span id="logo">TheRightPath</span>
             <a href="#">Пошук маршруту</a>/
             <a href="Station.html">Пошук по станції</a>/
-            <a href="Train.html">БД потягів</a>/
+            <a href="Train.html">Сторінка пошуку по філії</a>/
+            <a href="support.html">Контакти</a>
         </div>
 
         <h1>Сервіс пошуку потягів та маршрутів «TheRightPath»</h1>
@@ -63,21 +64,78 @@
                             </td>
                             <td>
                                 <div class="form_div">
-                                    <input class="view" id="v1" type="checkbox" name="v" value="1" checked title="Швидкісний">
+                                  <div class="signature">
+                                   <div class="c">
+                                       <input class="view" id="v1" type="checkbox" name="v" value="1" checked title="Швидкісний">
+                                       <p>Швидкісний &nbsp;</p>
+                                    </div>
+                                    <div class="c">
+                                       <input class="view" id="v2" type="checkbox" name="v" value="2" checked title="Фірмовий">
+                                       <p>Фір. &nbsp;</p>
+                                    </div>
+                                    <div class="c">
+                                       <input class="view" id="v3" type="checkbox" name="v" value="3" checked title="Швидкий">
+                                       <p>Швидкий &nbsp;</p>
+                                    </div>
+                                    <div class="c">
+                                       <input class="view" id="v4" type="checkbox" name="v" value="4" checked title="Пасажирський">
+                                       <p>Пасаж. &nbsp;</p>
+                                    </div>
+                                    <div class="c">
+                                       <input class="view" id="v5" type="checkbox" name="v" value="5" checked title="Електричка">
+                                       <p>Елек.</p>
+                                    </div>
+                                    </div>
+                                    <!--<input class="view" id="v1" type="checkbox" name="v" value="1" checked title="Швидкісний">
                                     <input class="view" id="v2" type="checkbox" name="v" value="2" checked title="Фірмовий">
                                     <input class="view" id="v3" type="checkbox" name="v" value="3" checked title="Швидкий">
                                     <input class="view" id="v4" type="checkbox" name="v" value="4" checked title="Пасажирський">
                                     <input class="view" id="v5" type="checkbox" name="v" value="5" checked title="Електричка">
+                                       <div class="signature">
+                                        <p>Швидкісний|Фір.|Швидкий|Пас.|Еле.</p>
+                                    </div>-->
                                 </div>
                             </td>
                             <td>
-                                <div class="form_div">
-                                    <input class="type" id="t1" type="checkbox" name="t" value="1" checked title="СВ">
-                                    <input class="type" id="t2" type="checkbox" name="t" value="2" checked title="Люкс">
-                                    <input class="type" id="t3" type="checkbox" name="t" value="3" checked title="Купе">
-                                    <input class="type" id="t4" type="checkbox" name="t" value="4" checked title="Плацкарт">
-                                    <input class="type" id="t5" type="checkbox" name="t" value="5" checked title="Сидячий 1-го класу">
-                                    <input class="type" id="t6" type="checkbox" name="t" value="6" checked title="Сидячий 2-го класу">
+                               <div class="form_div">
+                                   <div class="signature">
+                                   <div class="c">
+                                       <input class="type" id="t1" type="checkbox" name="t" value="1" checked title="СВ">
+                                       <p>СВ &nbsp;&nbsp;</p>
+                                    </div>
+                                    <div class="c">
+                                       <input class="type" id="t2" type="checkbox" name="t" value="2" checked title="Люкс">
+                                       <p>&nbsp;Люкс &nbsp;</p>
+                                    </div>
+                                    <div class="c">
+                                       <input class="type" id="t3" type="checkbox" name="t" value="3" checked title="Купе">
+                                       <p>Купе &nbsp;</p>
+                                    </div>
+                                    <div class="c">
+                                       <input class="type" id="t4" type="checkbox" name="t" value="4" checked title="Плацкарт">
+                                       <p>Плац. &nbsp;</p>
+                                    </div>
+                                    <div class="c">
+                                       <input class="type" id="t5" type="checkbox" name="t" value="5" checked title="Сидячий 1-го класу">
+                                       <p>Сид.1 к. &nbsp;</p>
+                                    </div>
+                                    <div class="c">
+                                       <input class="type" id="t6" type="checkbox" name="t" value="6" checked title="Сидячий 2-го класу">
+                                       <p>Сид.2 к.</p>
+                                    </div>
+                                    </div>
+                                    <!--<div>
+                                        <input class="type" id="t1" type="checkbox" name="t" value="1" checked title="СВ">
+                                        <input class="type" id="t2" type="checkbox" name="t" value="2" checked title="Люкс">
+                                        <input class="type" id="t3" type="checkbox" name="t" value="3" checked title="Купе">
+                                        <input class="type" id="t4" type="checkbox" name="t" value="4" checked title="Плацкарт">
+                                        <input class="type" id="t5" type="checkbox" name="t" value="5" checked title="Сидячий 1-го класу">
+                                        <input class="type" id="t6" type="checkbox" name="t" value="6" checked title="Сидячий 2-го класу">
+                                    </div>
+                                    <div class="signature">
+                                        <p>СВ Люкс Купе Плац. С. 1 к. С. 2 к.</p>
+                                        
+                                    </div>-->
                                 </div>
                             </td>
                             <td>
@@ -90,7 +148,7 @@
                                     </p>
                                 </div>
                             </td>
-                            <td>
+                            <!--<td>
                                 <div class="form_div">
                                     <p>
                                         <select name="sort" id="sort">
@@ -100,7 +158,7 @@
                                 </select>
                                     </p>
                                 </div>
-                            </td>
+                            </td>-->
                             <td>
                                 <div class="form_div">
                                     <button id="computing">Розрахувати</button>
@@ -110,16 +168,27 @@
                     </tbody>
                 </table>
             </div>
+            
+            <div id="first">
 
-            <div id="map"></div>
+                <div id="map"></div>
 
-            <div id="box_text" hidden="false">
+                <div id="box_text" hidden="false">
+                </div>
+            </div>
+            
+            <div id="second">
+            
+            </div>
+            
+            <div id="third">
+            
             </div>
         </div>
     </div>
     <div id="footer">
-        Copyright &copy; 2017/
-        <p>Керівник: Гапоненко Н. В., Розробник: Нікуліцов Є. Е.</p>
+        Copyright &copy; 2018/
+        <p>Керівник: Бабенко І.Б., Розробник: Нікуліцов Є. Е.</p>
         <span class="Way" style="width: 100px;"></span>
 
     </div>

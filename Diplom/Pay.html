@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>TheRightPath</title>
+    <link rel="stylesheet" href="css/style_pay.css">
+    <link rel="stylesheet" type="text/css" href="css/jquery.minical.plain.css">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no, maximum-scale=1" /> 
+    
+    <!-- <script src="http://api-maps.yandex.ua/2.0/?load=package.full&lang=uk-UA&mode=debug" type="text/javascript"></script>
+    <script src="//yandex.st/jquery/1.6.4/jquery.min.js" type="text/javascript"></script>
+    <script src="balloon_and_hint.js" type="text/javascript"></script>-->
+</head>
+<body>
+  <div id="content">
+    <div id="header">
+      <span id="logo">TheRightPath</span>
+      <a href="index.html">Пошук маршруту</a>/
+		  <a href="Station.html">Пошук по станції</a>/
+      <a href="Train.html">Сторінка пошуку по філії</a>/		
+      <a href="support.html">Контакти</a>
+    </div>
+    
+    <h1>Сервіс пошуку потягів та маршрутів «TheRightPath»</h1>
+    <div id="center">
+     
+     <!--<div id="info">
+       
+        <div id="num" class="divT">
+            <p>049П</p>
+        </div>
+        
+         <div id="infoTrain" class="divT">
+             <p>Дніпро головний</p><br>
+             <p>23 січ. 22:25</p><br><br>
+             <p>8 год. 12 хв.</p><br><br>
+             <p>24 січ. 06:58</p><br>
+             <p>Київ пасажирський</p><br>
+         </div>
+
+         <div id="tic" class="divT">
+             <p>Люкс</p> <br>
+             <p>СВ</p><br>
+             <p>Купе</p><br>
+             <p>Плацкарт</p><br>
+             <p>1-й клас</p><br>
+             <p>2-й клас</p><br>
+         </div>
+         
+         <div id="ticg" class="divT">
+             <p>... ... грн. <span class="ticket" id="s1">Оформити </span></p> <br>
+             <p>... ... грн. <span class="ticket" id="s2">Оформити </span></p><br>
+             <p>... ... грн. <span class="ticket" id="s3">Оформити </span></p><br>
+             <p>... ... грн. <span class="ticket" id="s4">Оформити </span></p><br>
+             <p>... ... грн. <span class="ticket" id="s5">Оформити </span></p><br>
+             <p>... ... грн. <span class="ticket" id="s6">Оформити </span></p><br>
+         </div>
+     </div>-->
+     
+     <div class="grouping" id="t">
+            <div class="i" id="info">
+
+            </div>
+<div id="tickets" >Оформити квитки</div>      
+      
+<div id="tab2">
+           <div id="typeCar">
+             
+              <!--<div class="type" data-type="Плацкарт" data-num="76" data-date="13-08-18" data-st1="" data-st2="">
+                  Плацкарт
+              </div>
+              <div class="type" data-type="Kупе" data-num="76" data-date="13-08-18" data-st1="" data-st2="">
+                  Купе
+              </div>-->
+               
+           </div>
+           
+           <div id="Car">
+              <div id="Carr">
+                   <p>Оберіть вагон</p>
+                   <!--<span id="many">Ціна: 315,00 грн</span>-->
+               </div>
+               <div id="colV">
+                   <!--<div class="Vagon" data-car-num="1" data-num="76" data-date="13-08-17" data-type="Плацкарт">
+                   1
+                   </div>
+                   <div class="Vagon" data-car-num="2" data-num="76" data-date="13-08-17" data-type="Купе">
+                    2
+                   </div>-->
+               </div>
+               
+           </div>
+    <tr>
+        <td>
+            <div id="carriage">
+                
+                <table id="Plac">
+                    <tr>
+                        <td id="t1" class="reserve plack" data-num="1">1</td>
+                        <td rowspan="2"></td>
+                        <td id="t3" class="reserve plack" data-num="3">3</td>
+                        <td id="t5" class="reserve plack" data-num="5">5</td>
+                        <td rowspan="2"></td>
+                        <td id="t7" class="click plack" data-num="7">7</td>
+                        <td id="t9" class="click plack" data-num="9">9</td>
+                        <td rowspan="2"></td>
+                        <td id="t11" class="click plack" data-num="11">11</td>
+                        <td id="t13" class="click plack" data-num="13">13</td>
+                        <td rowspan="2"></td>
+                        <td id="t15" class="click plack" data-num="15">15</td>
+                        <td id="t17" class="click plack" data-num="17">17</td>
+                        <td rowspan="2"></td>
+                        <td id="t19" class="click plack" data-num="19">19</td>
+                        <td id="t21" class="click plack" data-num="21">21</td>
+                        <td rowspan="2"></td>
+                        <td id="t23" class="click plack" data-num="23">23</td>
+                        <td id="t25" class="click plack" data-num="25">25</td>
+                        <td rowspan="2"></td>
+                        <td id="t27" class="click plack" data-num="27">27</td>
+                        <td id="t29" class="click plack" data-num="29">29</td>
+                        <td rowspan="2"></td>
+                        <td id="t31" class="click plack" data-num="31">31</td>
+                        <td id="t33" class="click plack" data-num="33">33</td>
+                        <td rowspan="2"></td>
+                        <td id="t35" class="click plack" data-num="35">35</td>
+                    </tr>
+                    <tr>
+                        <td id="t2" class="click plack" data-num="2">2</td>
+                        <td id="t4" class="click plack" data-num="4">4</td>
+                        <td id="t6" class="click plack" data-num="6">6</td>
+                        <td id="t8" class="click plack" data-num="8">8</td>
+                        <td id="t10" class="click plack" data-num="10">10</td>
+                        <td id="t12" class="click plack" data-num="12">12</td>
+                        <td id="t14" class="click plack" data-num="14">14</td>
+                        <td id="t16" class="click plack" data-num="16">16</td>
+                        <td id="t18" class="click plack" data-num="18">18</td>
+                        <td id="t20" class="click plack" data-num="20">20</td>
+                        <td id="t22" class="click plack" data-num="22">22</td>
+                        <td id="t24" class="click plack" data-num="24">24</td>
+                        <td id="t26" class="click plack" data-num="26">26</td>
+                        <td id="t28" class="click plack" data-num="28">28</td>
+                        <td id="t30" class="click plack" data-num="30">30</td>
+                        <td id="t32" class="click plack" data-num="32">32</td>
+                        <td id="t34" class="click plack" data-num="34">34</td>
+                        <td id="t36" class="click plack" data-num="36">36</td>
+                    </tr>
+                    <tr>
+                        <td colspan="27">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" id="t37" class="click plack" data-num="37">37</td>
+                        <td id="t38" class="click plack" data-num="38">38</td>
+                        <td colspan="2" id="t39" class="click plack" data-num="39">39</td>
+                        <td id="t40" class="click plack" data-num="40">40</td>
+                        <td colspan="2" id="t41" class="click plack" data-num="41">41</td>
+                        <td id="t42" class="click plack" data-num="42">42</td>
+                        <td colspan="2" id="t43" class="click plack" data-num="43">43</td>
+                        <td id="t44" class="click plack" data-num="44">44</td>
+                        <td colspan="2" id="t45" class="click plack" data-num="45">45</td>
+                        <td id="t46" class="click plack" data-num="46">46</td>
+                        <td colspan="2" id="t47" class="click plack" data-num="47">47</td>
+                        <td id="t48" class="click plack" data-num="48">48</td>
+                        <td colspan="2" id="t49" class="click plack" data-num="49">49</td>
+                        <td id="t50" class="click plack" data-num="50">50</td>
+                        <td colspan="2" id="t51" class="click plack" data-num="51">51</td>
+                        <td id="t52" class="click plack" data-num="52">52</td>
+                        <td colspan="2" id="t53" class="click plack" data-num="53">53</td>
+                        <td id="t54" class="click plack" data-num="54">54</td>
+                    </tr>
+                </table>
+                <br>
+                <table id="Kup">
+                    <tr>
+                        <td id="k1" class="click Kupe" data-num="1">1</td>
+                        <td rowspan="2"></td>
+                        <td id="k3" class="click Kupe" data-num="3">3</td>
+                        <td id="k5" class="click Kupe" data-num="5">5</td>
+                        <td rowspan="2"></td>
+                        <td id="k7" class="click Kupe" data-num="7">7</td>
+                        <td id="k9" class="click Kupe" data-num="9">9</td>
+                        <td rowspan="2"></td>
+                        <td id="k11" class="click Kupe" data-num="11">11</td>
+                        <td id="k13" class="click Kupe" data-num="13">13</td>
+                        <td rowspan="2"></td>
+                        <td id="k15" class="click Kupe" data-num="15">15</td>
+                        <td id="k17" class="click Kupe" data-num="17">17</td>
+                        <td rowspan="2"></td>
+                        <td id="k19" class="click Kupe" data-num="19">19</td>
+                        <td id="k21" class="click Kupe" data-num="21">21</td>
+                        <td rowspan="2"></td>
+                        <td id="k23" class="click Kupe" data-num="23">23</td>
+                        <td id="k25" class="click Kupe" data-num="25">25</td>
+                        <td rowspan="2"></td>
+                        <td id="k27" class="click Kupe" data-num="27">27</td>
+                        <td id="k29" class="click Kupe" data-num="29">29</td>
+                        <td rowspan="2"></td>
+                        <td id="k31" class="click Kupe" data-num="31">31</td>
+                        <td id="k33" class="click Kupe" data-num="33">33</td>
+                        <td rowspan="2"></td>
+                        <td id="k35" class="click Kupe" data-num="35">35</td>
+                    </tr>
+                    <tr>
+                        <td id="k2" class="click Kupe" data-num="2">2</td>
+                        <td id="k4" class="click Kupe" data-num="4">4</td>
+                        <td id="k6" class="click Kupe" data-num="6">6</td>
+                        <td id="k8" class="click Kupe" data-num="8">8</td>
+                        <td id="k10" class="click Kupe" data-num="10">10</td>
+                        <td id="k12" class="click Kupe" data-num="12">12</td>
+                        <td id="k14" class="click Kupe" data-num="14">14</td>
+                        <td id="k16" class="click Kupe" data-num="16">16</td>
+                        <td id="k18" class="click Kupe" data-num="18">18</td>
+                        <td id="k20" class="click Kupe" data-num="20">20</td>
+                        <td id="k22" class="click Kupe" data-num="22">22</td>
+                        <td id="k24" class="click Kupe" data-num="24">24</td>
+                        <td id="k26" class="click Kupe" data-num="26">26</td>
+                        <td id="k28" class="click Kupe" data-num="28">28</td>
+                        <td id="k30" class="click Kupe" data-num="30">30</td>
+                        <td id="k32" class="click Kupe" data-num="32">32</td>
+                        <td id="k34" class="click Kupe" data-num="34">34</td>
+                        <td id="k36" class="click Kupe" data-num="36">36</td>
+                    </tr>
+                    <tr>
+                        <td colspan="27">&nbsp;</td>
+                    </tr>
+                </table>
+                <br>
+                <table id="SV">
+                    <tr>
+                        <td id="vs1" class="click SeVe" data-num="1">1</td>
+                        <td></td>
+                        <td id="vs2" class="click SeVe" data-num="2">2</td>
+                        <td id="vs3" class="click SeVe" data-num="3">3</td>
+                        <td></td>
+                        <td id="vs4" class="click SeVe" data-num="4">4</td>
+                        <td id="vs5" class="click SeVe" data-num="5">5</td>
+                        <td></td>
+                        <td id="vs6" class="click SeVe" data-num="6">6</td>
+                        <td id="vs7" class="click SeVe" data-num="7">7</td>
+                        <td></td>
+                        <td id="vs8" class="click SeVe" data-num="8">8</td>
+                        <td id="vs9" class="click SeVe" data-num="9">9</td>
+                        <td></td>
+                        <td id="vs10" class="click SeVe" data-num="10">10</td>
+                        <td id="vs11" class="click SeVe" data-num="11">11</td>
+                        <td></td>
+                        <td id="vs12" class="click SeVe" data-num="12">12</td>
+                        <td id="vs13" class="click SeVe" data-num="13">13</td>
+                        <td></td>
+                        <td id="vs14" class="click SeVe" data-num="14">14</td>
+                        <td id="vs15" class="click SeVe" data-num="15">15</td>
+                        <td ></td>
+                        <td id="vs16" class="click SeVe" data-num="16">16</td>
+                        <td id="vs17" class="click SeVe" data-num="17">17</td>
+                        <td></td>
+                        <td id="vs18" class="click SeVe" data-num="18">18</td>
+                    </tr>
+                    <tr>
+                        <td colspan="27">&nbsp;</td>
+                    </tr>
+                </table>
+                
+                <br>
+                <table id="class12">
+                    <tr>
+                        <td id="s1" class="click klass" data-num="1">1</td>
+                        <td id="s3" class="click klass" data-num="3">3</td>
+                        <td id="s5" class="click klass" data-num="5">5</td>
+                        <td id="s7" class="click klass" data-num="7">7</td>
+                        <td id="s9" class="click klass" data-num="9">9</td>
+                        <td id="s11" class="click klass" data-num="11">11</td>
+                        <td id="s13" class="click klass" data-num="13">13</td>
+                        <td id="s15" class="click klass" data-num="15">15</td>
+                        <td id="s17" class="click klass" data-num="17">17</td>
+                        <td id="s19" class="click klass" data-num="19">19</td>
+                        <td id="s21" class="click klass" data-num="21">21</td>
+                        <td id="s23" class="click klass" data-num="23">23</td>
+                        <td id="s25" class="click klass" data-num="25">25</td>
+                        <td id="s27" class="click klass" data-num="27">27</td>
+                        <td id="s29" class="click klass" data-num="29">29</td>
+                        <td id="s31" class="click klass" data-num="31">31</td>
+                        <td id="s33" class="click klass" data-num="33">33</td>
+                        <td id="s35" class="click klass" data-num="35">35</td>
+                    </tr>
+                    <tr>
+                        <td id="s2" class="click klass" data-num="2">2</td>
+                        <td id="s4" class="click klass" data-num="4">4</td>
+                        <td id="s6" class="click klass" data-num="6">6</td>
+                        <td id="s8" class="click klass" data-num="8">8</td>
+                        <td id="s10" class="click klass" data-num="10">10</td>
+                        <td id="s12" class="click klass" data-num="12">12</td>
+                        <td id="s14" class="click klass" data-num="14">14</td>
+                        <td id="s16" class="click klass" data-num="16">16</td>
+                        <td id="s18" class="click klass" data-num="18">18</td>
+                        <td id="s20" class="click klass" data-num="20">20</td>
+                        <td id="s22" class="click klass" data-num="22">22</td>
+                        <td id="s24" class="click klass" data-num="24">24</td>
+                        <td id="s26" class="click klass" data-num="26">26</td>
+                        <td id="s28" class="click klass" data-num="28">28</td>
+                        <td id="s30" class="click klass" data-num="30">30</td>
+                        <td id="s32" class="click klass" data-num="32">32</td>
+                        <td id="s34" class="click klass" data-num="34">34</td>
+                        <td id="s36" class="click klass" data-num="36">36</td>
+                    </tr>
+                    <tr>
+                        <td colspan="18">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2">&nbsp;</td>
+                        <td id="s37" class="click klass" data-num="37">37</td>
+                        <td id="s39" class="click klass" data-num="39">39</td>
+                        <td id="s41" class="click klass" data-num="41">41</td>
+                        <td id="s43" class="click klass" data-num="43">43</td>
+                        <td id="s45" class="click klass" data-num="45">45</td>
+                        <td id="s47" class="click klass" data-num="47">47</td>
+                        <td id="s49" class="click klass" data-num="49">49</td>
+                        <td id="s51" class="click klass" data-num="51">51</td>
+                        <td id="s53" class="click klass" data-num="53">53</td>
+                        <td id="s55" class="click klass" data-num="55">55</td>
+                        <td id="s57" class="click klass" data-num="57">57</td>
+                        <td id="s59" class="click klass" data-num="59">59</td>
+                        <td id="s61" class="click klass" data-num="61">61</td>
+                        <td id="s63" class="click klass" data-num="63">63</td>
+                        <td id="s65" class="click klass" data-num="65">65</td>
+                        <td id="s67" class="click klass" data-num="67">67</td>
+                        <td rowspan="2">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td id="s38" class="click klass" data-num="38">38</td>
+                        <td id="s40" class="click klass" data-num="40">40</td>
+                        <td id="s42" class="click klass" data-num="42">42</td>
+                        <td id="s44" class="click klass" data-num="44">44</td>
+                        <td id="s46" class="click klass" data-num="46">46</td>
+                        <td id="s48" class="click klass" data-num="48">48</td>
+                        <td id="s50" class="click klass" data-num="50">50</td>
+                        <td id="s52" class="click klass" data-num="52">52</td>
+                        <td id="s54" class="click klass" data-num="54">54</td>
+                        <td id="s56" class="click klass" data-num="56">56</td>
+                        <td id="s58" class="click klass" data-num="58">58</td>
+                        <td id="s60" class="click klass" data-num="60">60</td>
+                        <td id="s62" class="click klass" data-num="62">62</td>
+                        <td id="s64" class="click klass" data-num="64">64</td>
+                        <td id="s66" class="click klass" data-num="66">66</td>
+                        <td id="s68" class="click klass" data-num="68">68</td>
+                    </tr>
+                </table>
+           
+            </div>
+        </td>
+    </tr>
+    
+    <div id="infoPay">
+        
+        <div id="passenger">
+          <!--<div id="pasNum1">
+              <p>Пасажир №1</p>
+               <div class="line">
+                    <input class="input" type="text" name="second" id="second1" placeholder="Прізвище" autocomplete="off" required onclick="$(this).css ('border-color','#ccc')" maxlength="30">
+                    <input class="input" type="text" name="first" id="first1" placeholder="Ім'я" autocomplete="off" required onclick="$(this).css ('border-color','#ccc')" maxlength="30">
+                    <div class="line">
+                        <div class="block" data-type="standart" data-num="1">Стандартний
+                        </div>
+                        <div class="block" data-type="children" data-num="1">Дитячий
+                        </div>
+                        <div class="block" data-type="student" data-num="1">Студентський
+                        </div>
+                    </div>
+               </div> 
+
+                <div class="line">
+                    <input class="input" type="date" name="dat" id="dat1" placeholder="Дата народження" required onclick="$(this).css ('border-color','#ccc')" >
+                    <input class="input" type="text" name="numStud" id="numStud1" placeholder="Серія та номер" autocomplete="off" required onclick="$(this).css ('border-color','#ccc')" maxlength="30">
+
+                    <div id="infoField1" class="infoField"></div>
+                </div>
+            </div>-->
+        </div>
+        
+        <div class="Twoline">
+            <div class="services">
+                <p>Сервіси</p>
+                <div class="line">
+                    <div class="mbp">
+                        <input class="ch view" id="v1" type="checkbox" name="v" value="1" checked><br>
+                        <input class="ch view" id="v2" type="checkbox" name="v" value="2"><br>
+                        <input class="ch view" id="v3" type="checkbox" name="v" value="3">
+                    </div>
+                    <div class="mbp">
+                        <p> без чая</p>
+                        <p> 1 чай</p>
+                        <p> 2 чая</p>
+                    </div>
+                    <div class="mbp">
+                        <input class="view" id="v4" type="checkbox" name="v" value="4" checked>
+                    </div>
+                    <div class="mbp">
+                        <p> постіль</p>
+                    </div>
+                </div>
+            </div>
+            <div class="baggage">
+               <p>Багаж</p>
+               <div class="line">
+                   <div class="mbp">
+                        <input class="view" id="v5" type="checkbox" name="v" value="5"><br>
+                        <input class="view" id="v6" type="checkbox" name="v" value="6"><br>
+                        <input class="view" id="v7" type="checkbox" name="v" value="7">
+                    </div>
+                    <div class="mbp">
+                        <p> Апаратура</p>
+                        <p> Тварини, птахи</p>
+                        <p> Багаж вагою понад 50 кг.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ButtonPay">
+            <button id="p">Оформити білет</button>
+        </div>
+    </div>
+</div>
+    
+    </div>
+     
+     
+     <div class="grouping" id="t1">
+     <div class="i" id="info1">
+
+    </div>
+           <div id="tickets1" >Оформити квитки</div>
+            
+     <div id="tab1">
+           <div id="typeCar1">
+             
+              <!--<div class="type" data-type="Плацкарт" data-num="76" data-date="13-08-18" data-st1="" data-st2="">
+                  Плацкарт
+              </div>
+              <div class="type" data-type="Kупе" data-num="76" data-date="13-08-18" data-st1="" data-st2="">
+                  Купе
+              </div>-->
+               
+           </div>
+           
+           <div id="Car1">
+              <div id="Carr1">
+                   <p>Оберіть вагон</p>
+                   <!--<span id="many">Ціна: 315,00 грн</span>-->
+               </div>
+               <div id="colV1">
+                   <!--<div class="Vagon" data-car-num="1" data-num="76" data-date="13-08-17" data-type="Плацкарт">
+                   1
+                   </div>
+                   <div class="Vagon" data-car-num="2" data-num="76" data-date="13-08-17" data-type="Купе">
+                    2
+                   </div>-->
+               </div>
+               
+           </div>
+    <tr>
+        <td>
+            <div id="carriage1">
+                
+                <table id="Plac1">
+                    <tr>
+                        <td id="t1" class="reserve plack1" data-num="1">1</td>
+                        <td rowspan="2"></td>
+                        <td id="t3" class="reserve plack1" data-num="3">3</td>
+                        <td id="t5" class="reserve plack1" data-num="5">5</td>
+                        <td rowspan="2"></td>
+                        <td id="t7" class="click plack1" data-num="7">7</td>
+                        <td id="t9" class="click plack1" data-num="9">9</td>
+                        <td rowspan="2"></td>
+                        <td id="t11" class="click plack1" data-num="11">11</td>
+                        <td id="t13" class="click plack1" data-num="13">13</td>
+                        <td rowspan="2"></td>
+                        <td id="t15" class="click plack1" data-num="15">15</td>
+                        <td id="t17" class="click plack1" data-num="17">17</td>
+                        <td rowspan="2"></td>
+                        <td id="t19" class="click plack1" data-num="19">19</td>
+                        <td id="t21" class="click plack1" data-num="21">21</td>
+                        <td rowspan="2"></td>
+                        <td id="t23" class="click plack1" data-num="23">23</td>
+                        <td id="t25" class="click plack1" data-num="25">25</td>
+                        <td rowspan="2"></td>
+                        <td id="t27" class="click plack1" data-num="27">27</td>
+                        <td id="t29" class="click plack1" data-num="29">29</td>
+                        <td rowspan="2"></td>
+                        <td id="t31" class="click plack1" data-num="31">31</td>
+                        <td id="t33" class="click plack1" data-num="33">33</td>
+                        <td rowspan="2"></td>
+                        <td id="t35" class="click plack1" data-num="35">35</td>
+                    </tr>
+                    <tr>
+                        <td id="t2" class="click plack1" data-num="2">2</td>
+                        <td id="t4" class="click plack1" data-num="4">4</td>
+                        <td id="t6" class="click plack1" data-num="6">6</td>
+                        <td id="t8" class="click plack1" data-num="8">8</td>
+                        <td id="t10" class="click plack1" data-num="10">10</td>
+                        <td id="t12" class="click plack1" data-num="12">12</td>
+                        <td id="t14" class="click plack1" data-num="14">14</td>
+                        <td id="t16" class="click plack1" data-num="16">16</td>
+                        <td id="t18" class="click plack1" data-num="18">18</td>
+                        <td id="t20" class="click plack1" data-num="20">20</td>
+                        <td id="t22" class="click plack1" data-num="22">22</td>
+                        <td id="t24" class="click plack1" data-num="24">24</td>
+                        <td id="t26" class="click plack1" data-num="26">26</td>
+                        <td id="t28" class="click plack1" data-num="28">28</td>
+                        <td id="t30" class="click plack1" data-num="30">30</td>
+                        <td id="t32" class="click plack1" data-num="32">32</td>
+                        <td id="t34" class="click plack1" data-num="34">34</td>
+                        <td id="t36" class="click plack1" data-num="36">36</td>
+                    </tr>
+                    <tr>
+                        <td colspan="27">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" id="t37" class="click plack1" data-num="37">37</td>
+                        <td id="t38" class="click plack1" data-num="38">38</td>
+                        <td colspan="2" id="t39" class="click plack1" data-num="39">39</td>
+                        <td id="t40" class="click plack1" data-num="40">40</td>
+                        <td colspan="2" id="t41" class="click plack1" data-num="41">41</td>
+                        <td id="t42" class="click plack1" data-num="42">42</td>
+                        <td colspan="2" id="t43" class="click plack1" data-num="43">43</td>
+                        <td id="t44" class="click plack1" data-num="44">44</td>
+                        <td colspan="2" id="t45" class="click plack1" data-num="45">45</td>
+                        <td id="t46" class="click plack1" data-num="46">46</td>
+                        <td colspan="2" id="t47" class="click plack1" data-num="47">47</td>
+                        <td id="t48" class="click plack1" data-num="48">48</td>
+                        <td colspan="2" id="t49" class="click plack1" data-num="49">49</td>
+                        <td id="t50" class="click plack1" data-num="50">50</td>
+                        <td colspan="2" id="t51" class="click plack1" data-num="51">51</td>
+                        <td id="t52" class="click plack1" data-num="52">52</td>
+                        <td colspan="2" id="t53" class="click plack1" data-num="53">53</td>
+                        <td id="t54" class="click plack1" data-num="54">54</td>
+                    </tr>
+                </table>
+                <br>
+                <table id="Kup1">
+                    <tr>
+                        <td id="k1" class="click Kupe1" data-num="1">1</td>
+                        <td rowspan="2"></td>
+                        <td id="k3" class="click Kupe1" data-num="3">3</td>
+                        <td id="k5" class="click Kupe1" data-num="5">5</td>
+                        <td rowspan="2"></td>
+                        <td id="k7" class="click Kupe1" data-num="7">7</td>
+                        <td id="k9" class="click Kupe1" data-num="9">9</td>
+                        <td rowspan="2"></td>
+                        <td id="k11" class="click Kupe1" data-num="11">11</td>
+                        <td id="k13" class="click Kupe1" data-num="13">13</td>
+                        <td rowspan="2"></td>
+                        <td id="k15" class="click Kupe1" data-num="15">15</td>
+                        <td id="k17" class="click Kupe1" data-num="17">17</td>
+                        <td rowspan="2"></td>
+                        <td id="k19" class="click Kupe1" data-num="19">19</td>
+                        <td id="k21" class="click Kupe1" data-num="21">21</td>
+                        <td rowspan="2"></td>
+                        <td id="k23" class="click Kupe1" data-num="23">23</td>
+                        <td id="k25" class="click Kupe1" data-num="25">25</td>
+                        <td rowspan="2"></td>
+                        <td id="k27" class="click Kupe1" data-num="27">27</td>
+                        <td id="k29" class="click Kupe1" data-num="29">29</td>
+                        <td rowspan="2"></td>
+                        <td id="k31" class="click Kupe1" data-num="31">31</td>
+                        <td id="k33" class="click Kupe1" data-num="33">33</td>
+                        <td rowspan="2"></td>
+                        <td id="k35" class="click Kupe1" data-num="35">35</td>
+                    </tr>
+                    <tr>
+                        <td id="k2" class="click Kupe1" data-num="2">2</td>
+                        <td id="k4" class="click Kupe1" data-num="4">4</td>
+                        <td id="k6" class="click Kupe1" data-num="6">6</td>
+                        <td id="k8" class="click Kupe1" data-num="8">8</td>
+                        <td id="k10" class="click Kupe1" data-num="10">10</td>
+                        <td id="k12" class="click Kupe1" data-num="12">12</td>
+                        <td id="k14" class="click Kupe1" data-num="14">14</td>
+                        <td id="k16" class="click Kupe1" data-num="16">16</td>
+                        <td id="k18" class="click Kupe1" data-num="18">18</td>
+                        <td id="k20" class="click Kupe1" data-num="20">20</td>
+                        <td id="k22" class="click Kupe1" data-num="22">22</td>
+                        <td id="k24" class="click Kupe1" data-num="24">24</td>
+                        <td id="k26" class="click Kupe1" data-num="26">26</td>
+                        <td id="k28" class="click Kupe1" data-num="28">28</td>
+                        <td id="k30" class="click Kupe1" data-num="30">30</td>
+                        <td id="k32" class="click Kupe1" data-num="32">32</td>
+                        <td id="k34" class="click Kupe1" data-num="34">34</td>
+                        <td id="k36" class="click Kupe1" data-num="36">36</td>
+                    </tr>
+                    <tr>
+                        <td colspan="27">&nbsp;</td>
+                    </tr>
+                </table>
+                <br>
+                <table id="SV1">
+                    <tr>
+                        <td id="vs1" class="click SeVe1" data-num="1">1</td>
+                        <td></td>
+                        <td id="vs2" class="click SeVe1" data-num="2">2</td>
+                        <td id="vs3" class="click SeVe1" data-num="3">3</td>
+                        <td></td>
+                        <td id="vs4" class="click SeVe1" data-num="4">4</td>
+                        <td id="vs5" class="click SeVe1" data-num="5">5</td>
+                        <td></td>
+                        <td id="vs6" class="click SeVe1" data-num="6">6</td>
+                        <td id="vs7" class="click SeVe1" data-num="7">7</td>
+                        <td></td>
+                        <td id="vs8" class="click SeVe1" data-num="8">8</td>
+                        <td id="vs9" class="click SeVe1" data-num="9">9</td>
+                        <td></td>
+                        <td id="vs10" class="click SeVe1" data-num="10">10</td>
+                        <td id="vs11" class="click SeVe1" data-num="11">11</td>
+                        <td></td>
+                        <td id="vs12" class="click SeVe1" data-num="12">12</td>
+                        <td id="vs13" class="click SeVe1" data-num="13">13</td>
+                        <td></td>
+                        <td id="vs14" class="click SeVe1" data-num="14">14</td>
+                        <td id="vs15" class="click SeVe1" data-num="15">15</td>
+                        <td ></td>
+                        <td id="vs16" class="click SeVe1" data-num="16">16</td>
+                        <td id="vs17" class="click SeVe1" data-num="17">17</td>
+                        <td></td>
+                        <td id="vs18" class="click SeVe1" data-num="18">18</td>
+                    </tr>
+                    <tr>
+                        <td colspan="27">&nbsp;</td>
+                    </tr>
+                </table>
+                
+                <br>
+                <table id="class121">
+                    <tr>
+                        <td id="s1" class="click klass1" data-num="1">1</td>
+                        <td id="s3" class="click klass1" data-num="3">3</td>
+                        <td id="s5" class="click klass1" data-num="5">5</td>
+                        <td id="s7" class="click klass1" data-num="7">7</td>
+                        <td id="s9" class="click klass1" data-num="9">9</td>
+                        <td id="s11" class="click klass1" data-num="11">11</td>
+                        <td id="s13" class="click klass1" data-num="13">13</td>
+                        <td id="s15" class="click klass1" data-num="15">15</td>
+                        <td id="s17" class="click klass1" data-num="17">17</td>
+                        <td id="s19" class="click klass1" data-num="19">19</td>
+                        <td id="s21" class="click klass1" data-num="21">21</td>
+                        <td id="s23" class="click klass1" data-num="23">23</td>
+                        <td id="s25" class="click klass1" data-num="25">25</td>
+                        <td id="s27" class="click klass1" data-num="27">27</td>
+                        <td id="s29" class="click klass1" data-num="29">29</td>
+                        <td id="s31" class="click klass1" data-num="31">31</td>
+                        <td id="s33" class="click klass1" data-num="33">33</td>
+                        <td id="s35" class="click klass1" data-num="35">35</td>
+                    </tr>
+                    <tr>
+                        <td id="s2" class="click klass1" data-num="2">2</td>
+                        <td id="s4" class="click klass1" data-num="4">4</td>
+                        <td id="s6" class="click klass1" data-num="6">6</td>
+                        <td id="s8" class="click klass1" data-num="8">8</td>
+                        <td id="s10" class="click klass1" data-num="10">10</td>
+                        <td id="s12" class="click klass1" data-num="12">12</td>
+                        <td id="s14" class="click klass1" data-num="14">14</td>
+                        <td id="s16" class="click klass1" data-num="16">16</td>
+                        <td id="s18" class="click klass1" data-num="18">18</td>
+                        <td id="s20" class="click klass1" data-num="20">20</td>
+                        <td id="s22" class="click klass1" data-num="22">22</td>
+                        <td id="s24" class="click klass1" data-num="24">24</td>
+                        <td id="s26" class="click klass1" data-num="26">26</td>
+                        <td id="s28" class="click klass1" data-num="28">28</td>
+                        <td id="s30" class="click klass1" data-num="30">30</td>
+                        <td id="s32" class="click klass1" data-num="32">32</td>
+                        <td id="s34" class="click klass1" data-num="34">34</td>
+                        <td id="s36" class="click klass1" data-num="36">36</td>
+                    </tr>
+                    <tr>
+                        <td colspan="18">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2">&nbsp;</td>
+                        <td id="s37" class="click klass1" data-num="37">37</td>
+                        <td id="s39" class="click klass1" data-num="39">39</td>
+                        <td id="s41" class="click klass1" data-num="41">41</td>
+                        <td id="s43" class="click klass1" data-num="43">43</td>
+                        <td id="s45" class="click klass1" data-num="45">45</td>
+                        <td id="s47" class="click klass1" data-num="47">47</td>
+                        <td id="s49" class="click klass1" data-num="49">49</td>
+                        <td id="s51" class="click klass1" data-num="51">51</td>
+                        <td id="s53" class="click klass1" data-num="53">53</td>
+                        <td id="s55" class="click klass1" data-num="55">55</td>
+                        <td id="s57" class="click klass1" data-num="57">57</td>
+                        <td id="s59" class="click klass1" data-num="59">59</td>
+                        <td id="s61" class="click klass1" data-num="61">61</td>
+                        <td id="s63" class="click klass1" data-num="63">63</td>
+                        <td id="s65" class="click klass1" data-num="65">65</td>
+                        <td id="s67" class="click klass1" data-num="67">67</td>
+                        <td rowspan="2">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td id="s38" class="click klass1" data-num="38">38</td>
+                        <td id="s40" class="click klass1" data-num="40">40</td>
+                        <td id="s42" class="click klass1" data-num="42">42</td>
+                        <td id="s44" class="click klass1" data-num="44">44</td>
+                        <td id="s46" class="click klass1" data-num="46">46</td>
+                        <td id="s48" class="click klass1" data-num="48">48</td>
+                        <td id="s50" class="click klass1" data-num="50">50</td>
+                        <td id="s52" class="click klass1" data-num="52">52</td>
+                        <td id="s54" class="click klass1" data-num="54">54</td>
+                        <td id="s56" class="click klass1" data-num="56">56</td>
+                        <td id="s58" class="click klass1" data-num="58">58</td>
+                        <td id="s60" class="click klass1" data-num="60">60</td>
+                        <td id="s62" class="click klass1" data-num="62">62</td>
+                        <td id="s64" class="click klass1" data-num="64">64</td>
+                        <td id="s66" class="click klass1" data-num="66">66</td>
+                        <td id="s68" class="click klass1" data-num="68">68</td>
+                    </tr>
+                </table>
+           
+            </div>
+        </td>
+    </tr>
+    
+    <div id="infoPay1">
+        
+        <div id="passenger1">
+          <!--<div id="pasNum1">
+              <p>Пасажир №1</p>
+               <div class="line">
+                    <input class="input" type="text" name="second" id="second1" placeholder="Прізвище" autocomplete="off" required onclick="$(this).css ('border-color','#ccc')" maxlength="30">
+                    <input class="input" type="text" name="first" id="first1" placeholder="Ім'я" autocomplete="off" required onclick="$(this).css ('border-color','#ccc')" maxlength="30">
+                    <div class="line">
+                        <div class="block" data-type="standart" data-num="1">Стандартний
+                        </div>
+                        <div class="block" data-type="children" data-num="1">Дитячий
+                        </div>
+                        <div class="block" data-type="student" data-num="1">Студентський
+                        </div>
+                    </div>
+               </div> 
+
+                <div class="line">
+                    <input class="input" type="date" name="dat" id="dat1" placeholder="Дата народження" required onclick="$(this).css ('border-color','#ccc')" >
+                    <input class="input" type="text" name="numStud" id="numStud1" placeholder="Серія та номер" autocomplete="off" required onclick="$(this).css ('border-color','#ccc')" maxlength="30">
+
+                    <div id="infoField1" class="infoField"></div>
+                </div>
+            </div>-->
+        </div>
+        
+        <div class="Twoline">
+            <div id="services1">
+                <p>Сервіси</p>
+                <div class="line">
+                    <div class="mbp">
+                        <input class="ch view" id="v1" type="checkbox" name="v" value="1" checked><br>
+                        <input class="ch view" id="v2" type="checkbox" name="v" value="2"><br>
+                        <input class="ch view" id="v3" type="checkbox" name="v" value="3">
+                    </div>
+                    <div class="mbp">
+                        <p> без чая</p>
+                        <p> 1 чай</p>
+                        <p> 2 чая</p>
+                    </div>
+                    <div class="mbp">
+                        <input class="view" id="v4" type="checkbox" name="v" value="4" checked>
+                    </div>
+                    <div class="mbp">
+                        <p> постіль</p>
+                    </div>
+                </div>
+            </div>
+            <div class="baggage">
+               <p>Багаж</p>
+               <div class="line">
+                   <div class="mbp">
+                        <input class="view" id="v5" type="checkbox" name="v" value="5"><br>
+                        <input class="view" id="v6" type="checkbox" name="v" value="6"><br>
+                        <input class="view" id="v7" type="checkbox" name="v" value="7">
+                    </div>
+                    <div class="mbp">
+                        <p> Апаратура</p>
+                        <p> Тварини, птахи</p>
+                        <p> Багаж вагою понад 50 кг.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ButtonPay">
+            <button id="p1">Оформити білет</button>
+        </div>
+    </div>
+</div>
+   </div>
+    </div>
+  </div>
+  <div id="footer">
+    Copyright &copy; 2018/ <p>Керівник: Бабенко І.Б., Розробник: Нікуліцов Є. Е.</p>
+  </div>
+
+    <script type="text/javascript" src="js/jquery-2.0.3.min.js"></script>
+	<script type="text/javascript" src="js/jquery.minical.plain.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDYnxQlUA6bBNupyd0bsT253iPnpWckpSg&v=3.exp"></script>
+  <script src="js/ajax/tickets.js" type="text/javascript"></script>
+</body>
+</html>
