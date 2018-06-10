@@ -1,0 +1,132 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic);
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    /*background-color: #f7f7f7;*/
+    font-family: 'Roboto', sans-serif;
+}
+
+#content {
+    min-height: calc(100vh - 140px);
+    min-width: 1200px;
+}
+
+#footer {
+    background-color: #434445;
+    min-width: 1280px;
+    height: 140px;
+    margin: 0 auto 0;
+    text-align: center;
+    color: #a4a4a4;
+    font-size: 20px;
+    font-weight: 100;
+    line-height: 140px;
+    clear: both;
+}
+
+#footer p {
+    color: inherit;
+    display: inline;
+}
+
+.form {
+    width: 300px;
+    margin-left: 500px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+}
+
+#head {
+    background-color: #ccc;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 20px 20px 0px 0;
+}
+
+.log {
+    width: 50;
+    height: 40;
+    align-content: center;
+    padding-top: 10px; 
+    padding-bottom: 20px; 
+}
+
+#img {
+    display: flex; 
+    justify-content: center;
+}
+
+#content p {
+    color: #434b4d;
+    font-size: 18px;
+    font-weight: 300;
+    margin-bottom: 10px;
+    font-family: Arial;
+}
+
+#Pay {
+    text-align: center;
+}
+
+#CardNumber {
+    margin-left: 30px;
+    width: 250px;
+    border-radius: 10px;
+    height: 30px;
+    margin-bottom: 20px;
+}
+
+#dat {
+    margin-left: 50px;
+    margin-right: -5px;
+}
+
+#dat, #SecurityCode {
+    width: 100px;
+    border-radius: 5px;
+    height: 30px;
+    margin-bottom: 20px;
+}
+
+#computing, #cloase {
+    text-align: center;
+    margin: 10px 10px 10px 10px;
+    font-weight: 700;
+  color: white;
+  text-decoration: none;
+  padding: .8em 1em calc(.8em + 3px);
+  border-radius: 3px;
+  background: rgb(64,199,129);
+  box-shadow: 0 -3px rgb(53,167,110) inset;
+  transition: 0.2s;
+    border-radius: 10px;
+}
+
+#computing:hover, #cloase:hover { 
+    background: rgb(53, 167, 110); 
+}
+#computing:active, #cloase:active {
+  background: rgb(33,147,90);
+  box-shadow: 0 3px rgb(33,147,90) inset;
+}
+
+#img1 {
+    margin-left: 125px;
+    width: 35px;
+    margin-top: 20px;
+    border-radius: 100px; /* Радиус скругления */
+    border: 3px solid #ccc; /* Параметры рамки */
+    box-shadow: 0 0 7px #666; /* Параметры тени */
+}
+
+#Pay1 {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    text-align: center;
+}

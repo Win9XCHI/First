@@ -187,13 +187,14 @@ body {
     margin-right: 90px;
 }
 
-#p1, #p2 {
+#p1, #p2, #rr1, #rr2 {
     float: left;
     border: 1px solid #333; /* Рамка */
     padding: 5px 15px; /* Поля */
     box-shadow: 0 0 5px rgba(0,0,0,0.3); /* Тень */
     background: linear-gradient(to bottom, #fcfff4, #e9e9ce); /* Градиент */
-    height: 220px;
+    height: 300px;
+    margin-left: 30px;
 }
 
 #p1 {
@@ -283,4 +284,12 @@ body {
     cursor: pointer;
 }
 
+#rr1 {
+    width: 300px;
+}
+
+#rr2 {
+    width: 500px;
+    text-align: center;
+}
 

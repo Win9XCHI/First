@@ -1,0 +1,242 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic);
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #f7f7f7;
+    font-family: 'Roboto', sans-serif;
+}
+
+#header {
+    border: 1px solid #b5b7ba;
+    background-color: #dfdfdf;
+    min-width: 1280px;
+    height: 50px;
+    text-align: center;
+    padding-top: 18px;
+    position: relative;
+    /* Включаем режим Flexbox. */
+    /*display: flex; */
+    /* Распределяем элементы внутри шапки */
+    /*justify-content: space-between;*/
+    /* Выравниваем элементы вертикально по центру. */
+    /*align-items: center;*/
+}
+
+#logo {
+    color: #4d4d4d;
+    position: absolute;
+    left: 20px;
+    padding: 0 40px;
+    /*margin-right: 50px;*/
+    font-size: 20px;
+    font-weight: 100;
+    text-align: left;
+    text-decoration: none;
+    height: 30px;
+    line-height: 30px;
+    display: inline-block;
+}
+
+#header #selected {
+    color: #000;
+}
+
+#center {
+    width: 1280px;
+    margin: 0 auto;
+    padding-bottom: 50px;
+}
+
+#header a {
+    color: #4d4d4d;
+    padding: 0 40px;
+    font-size: 20px;
+    font-weight: 100;
+    text-align: left;
+    text-decoration: none;
+    height: 30px;
+    line-height: 30px;
+    display: inline-block;
+}
+
+#header span {
+    padding: 0 38px;
+}
+
+#content {
+    min-height: calc(100vh - 140px);
+    min-width: 1200px;
+}
+
+#content h1 {
+    min-width: 1200px;
+    text-align: center;
+    color: #2e353d;
+    font-size: 40px;
+    font-weight: 300;
+    margin-top: 33px;
+    margin-bottom: 45px;
+}
+
+#content h3 {
+    color: #242424;
+    font-size: 35px;
+    font-weight: 300;
+    text-align: left;
+    margin-left: 41px;
+    margin-top: 50px;
+    margin-bottom: 52px;
+}
+
+#content h5 {
+    color: #242424;
+    font-size: 24px;
+    text-align: left;
+}
+
+#content .media {
+    margin-right: 0;
+}
+
+#footer {
+    background-color: #434445;
+    min-width: 1280px;
+    height: 140px;
+    margin: 0 auto 0;
+    text-align: center;
+    color: #a4a4a4;
+    font-size: 20px;
+    font-weight: 100;
+    line-height: 140px;
+    clear: both;
+}
+
+#footer p {
+    color: inherit;
+    display: inline;
+}
+
+.view {
+    width: 20px;
+    height: 20px;
+}
+
+.type {
+    width: 20px;
+    height: 20px;
+}
+
+.computing {
+    width: 80px;
+    height: 40px;
+}
+
+.pay {
+    background: #ff8c00;
+    border-color: #ff8c00;
+}
+
+.details {
+    width: 50px;
+    background: #f08080;
+    border-color: #f08080;
+}
+
+.ticket {
+    cursor: pointer;
+    color:green;
+}
+
+.i {
+    /* Включаем режим Flexbox. */
+    display: flex; 
+    /* Распределяем элементы внутри шапки */
+    justify-content: space-around;
+    border: 1px solid #32CD32;
+    margin-bottom: 30px;
+    width: 600px;
+}
+
+.calendar thead tr {
+    background-color: rgb(64,199,129);
+}
+
+.calendar {
+  width: 750px;
+  font: monospace;
+  line-height: 1.2em;
+  font-size: 15px;
+  text-align: center;
+    margin-bottom: 30px;
+}
+.calendar thead tr:last-child {
+  font-size: small;
+  color: rgb(85, 85, 85);
+}
+.calendar thead tr:nth-child(1) td:nth-child(2) {
+  color: rgb(50, 50, 50);
+}
+.calendar thead tr:nth-child(1) td:nth-child(1):hover, #calendar2 thead tr:nth-child(1) td:nth-child(3):hover {
+  cursor: pointer;
+}
+.calendar tbody td {
+  color: rgb(44, 86, 122);
+}
+.calendar tbody td:nth-child(n+6), #calendar2 .holiday {
+  color: rgb(231, 140, 92);
+}
+.calendar tbody td.today {
+  background: rgb(220, 0, 0);
+  color: #fff;
+}
+
+#tickets {
+    text-align: center;
+    margin: 10px 10px 10px 10px;
+    font-weight: 700;
+  color: white;
+  text-decoration: none;
+  padding: .8em 1em calc(.8em + 3px);
+  border-radius: 3px;
+  background: rgb(64,199,129);
+  box-shadow: 0 -3px rgb(53,167,110) inset;
+  transition: 0.2s;
+}
+
+#tickets:hover { 
+    background: rgb(53, 167, 110); 
+}
+#tickets:active {
+  background: rgb(33,147,90);
+  box-shadow: 0 3px rgb(33,147,90) inset;
+}
+
+.odd {
+    background: #f0f9ff;
+    padding-bottom: 5px;
+}
+
+.tableStation {
+    width: 50%;
+    background-color: #ffffff;
+    margin-bottom: 30px;
+}
+
+#center {
+   display: flex; 
+    flex-direction: column;
+    align-items: center;
+}
+
+#center td{
+   width: 170px;
+}
+
+.grouping {
+    display: flex; 
+    justify-content: flex-start;
+    width: 1000px;
+}
