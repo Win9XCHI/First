@@ -10,6 +10,10 @@ var c = 0;
 var flag = false;
 var mas = [];
 var mas2 = [];
+var mas3 = [];
+var mas4 = [];
+var mas5 = [];
+var mas6 = [];
 $('#r').toggle();
 $('#d').toggle();
 $('#red').toggle();
@@ -19,6 +23,7 @@ $('#ad').toggle();
 $('#computing2').attr("disabled", "disabled");
 $('#computing3').attr("disabled", "disabled");
 $('#computing4').attr("disabled", "disabled");
+$('#addRed').attr("disabled", "disabled");
 
 document.getElementById('St_1').onkeypress = function (e) {
     flag = false;
@@ -140,6 +145,174 @@ document.getElementById('St_2').onkeypress = function (e) {
     return false;
 }; //Ввід у друге поле станції
 
+/*document.getElementById('cod').onkeypress = function (e) {
+    flag = false;
+    var len = mas3.length;
+
+    if (len != 0) {
+        var t = document.getElementById("kabsearchform3");
+
+        for (var i = 0; i < len; i++) {
+            t.removeChild(mas3[i]);
+        }
+        mas3 = [];
+    }
+    len = mas.length;
+    c = 3;
+
+    document.getElementById('kabsearchform3').style.cssText = "display: none;";
+    // спец. сочетание - не обрабатываем
+    if (e.ctrlKey || e.altKey || e.metaKey) return;
+
+    var char = getChar(e);
+
+    if (!char) return; // спец. символ - не обрабатываем
+
+
+    if ($(this).val().length < 7) {
+        this.value += char;
+
+        $.ajax({
+            url: "php/CheckWay.php",
+            type: "POST",
+            cache: false,
+            data: ({
+                'C': "13",
+                'value': this.value
+            }),
+            dataType: "html",
+            success: StationCheck
+        });
+    }
+    return false;
+}; //Ввід у друге поле станції*/
+
+document.getElementById('numSR').onkeypress = function (e) {
+    flag = false;
+    var len = mas4.length;
+
+    if (len != 0) {
+        var t = document.getElementById("kabsearchform4");
+
+        for (var i = 0; i < len; i++) {
+            t.removeChild(mas4[i]);
+        }
+        mas4 = [];
+    }
+    len = mas.length;
+    c = 4;
+
+    document.getElementById('kabsearchform4').style.cssText = "display: none;";
+    // спец. сочетание - не обрабатываем
+    if (e.ctrlKey || e.altKey || e.metaKey) return;
+
+    var char = getChar(e);
+
+    if (!char) return; // спец. символ - не обрабатываем
+
+
+    if ($(this).val().length < 7) {
+        this.value += char;
+
+        $.ajax({
+            url: "php/CheckWay.php",
+            type: "POST",
+            cache: false,
+            data: ({
+                'C': "13",
+                'value': this.value
+            }),
+            dataType: "html",
+            success: StationCheck
+        });
+    }
+    return false;
+}; //Ввід у друге поле станції
+
+document.getElementById('numSR2').onkeypress = function (e) {
+    flag = false;
+    var len = mas5.length;
+
+    if (len != 0) {
+        var t = document.getElementById("kabsearchform5");
+
+        for (var i = 0; i < len; i++) {
+            t.removeChild(mas5[i]);
+        }
+        mas5 = [];
+    }
+    len = mas.length;
+    c = 5;
+
+    document.getElementById('kabsearchform5').style.cssText = "display: none;";
+    // спец. сочетание - не обрабатываем
+    if (e.ctrlKey || e.altKey || e.metaKey) return;
+
+    var char = getChar(e);
+
+    if (!char) return; // спец. символ - не обрабатываем
+
+
+    if ($(this).val().length < 7) {
+        this.value += char;
+
+        $.ajax({
+            url: "php/CheckWay.php",
+            type: "POST",
+            cache: false,
+            data: ({
+                'C': "13",
+                'value': this.value
+            }),
+            dataType: "html",
+            success: StationCheck
+        });
+    }
+    return false;
+}; //Ввід у друге поле станції
+
+document.getElementById('numS').onkeypress = function (e) {
+    flag = false;
+    var len = mas6.length;
+
+    if (len != 0) {
+        var t = document.getElementById("kabsearchform6");
+
+        for (var i = 0; i < len; i++) {
+            t.removeChild(mas6[i]);
+        }
+        mas6 = [];
+    }
+    len = mas.length;
+    c = 6;
+
+    document.getElementById('kabsearchform6').style.cssText = "display: none;";
+    // спец. сочетание - не обрабатываем
+    if (e.ctrlKey || e.altKey || e.metaKey) return;
+
+    var char = getChar(e);
+
+    if (!char) return; // спец. символ - не обрабатываем
+
+
+    if ($(this).val().length < 7) {
+        this.value += char;
+
+        $.ajax({
+            url: "php/CheckWay.php",
+            type: "POST",
+            cache: false,
+            data: ({
+                'C': "13",
+                'value': this.value
+            }),
+            dataType: "html",
+            success: StationCheck
+        });
+    }
+    return false;
+}; //Ввід у друге поле станції
+
 function getChar(event) {
     if (event.which == null) { // IE
         if (event.keyCode < 32) return null; // спец. символ
@@ -191,7 +364,8 @@ function StDiv(col, Object) {
         t.appendChild(div);
 
         mas.push(div);
-    } else {
+    }
+    if (c == 2) {
         document.getElementById('kabsearchform2').style.cssText = "display: block; \
         position: absolute; \
         background-color: #fafafa; \
@@ -214,6 +388,102 @@ function StDiv(col, Object) {
         t.appendChild(div);
 
         mas2.push(div);
+    }
+    if (c == 3) {
+        document.getElementById('kabsearchform3').style.cssText = "display: block; \
+        position: absolute; \
+        background-color: #fafafa; \
+        border: solid 1px #a3a3a3; \
+        padding: 5px 10px; \
+        font-family: Arial; \
+        -webkit-box-shadow: inset 0 2px 3px rgba(0, 0, 0, .1); \
+        -moz-box-shadow: inset 0 2px 3px rgba(0, 0, 0, .1); \
+        box-shadow: inset 0 2px 3px rgba(0, 0, 0, .1); \
+        -webkit-border-radius: 5px;  \
+        -moz-border-radius: 5px; \
+        border-radius: 5px; \
+        -webkit-appearance: none; \
+        z-index: 99; \
+        line-height: normal; \
+        width: 160px; \
+      ";
+        div.innerHTML = "<div><p style=\"font-size: 14px;line-height: 1;\">" + Object.GetName() + "</p> <br><p style=\"font-size: 11px;line-height: 0;\">" + Object.GetBranch() + "</p> <br><p style=\"font-size: 11px;line-height: 0;\">---------------------------</p>";
+        var t = document.getElementById("kabsearchform3");
+        t.appendChild(div);
+
+        mas3.push(div);
+    }
+    if (c == 4) {
+        document.getElementById('kabsearchform4').style.cssText = "display: block; \
+        position: absolute; \
+        background-color: #fafafa; \
+        border: solid 1px #a3a3a3; \
+        padding: 5px 10px; \
+        font-family: Arial; \
+        -webkit-box-shadow: inset 0 2px 3px rgba(0, 0, 0, .1); \
+        -moz-box-shadow: inset 0 2px 3px rgba(0, 0, 0, .1); \
+        box-shadow: inset 0 2px 3px rgba(0, 0, 0, .1); \
+        -webkit-border-radius: 5px;  \
+        -moz-border-radius: 5px; \
+        border-radius: 5px; \
+        -webkit-appearance: none; \
+        z-index: 99; \
+        line-height: normal; \
+        width: 160px; \
+      ";
+        div.innerHTML = "<div><p style=\"font-size: 14px;line-height: 1;\">" + Object.GetName() + "</p> <br><p style=\"font-size: 11px;line-height: 0;\">" + Object.GetBranch() + "</p> <br><p style=\"font-size: 11px;line-height: 0;\">---------------------------</p>";
+        var t = document.getElementById("kabsearchform4");
+        t.appendChild(div);
+
+        mas4.push(div);
+    }
+    if (c == 5) {
+        document.getElementById('kabsearchform5').style.cssText = "display: block; \
+        position: absolute; \
+        background-color: #fafafa; \
+        border: solid 1px #a3a3a3; \
+        padding: 5px 10px; \
+        font-family: Arial; \
+        -webkit-box-shadow: inset 0 2px 3px rgba(0, 0, 0, .1); \
+        -moz-box-shadow: inset 0 2px 3px rgba(0, 0, 0, .1); \
+        box-shadow: inset 0 2px 3px rgba(0, 0, 0, .1); \
+        -webkit-border-radius: 5px;  \
+        -moz-border-radius: 5px; \
+        border-radius: 5px; \
+        -webkit-appearance: none; \
+        z-index: 99; \
+        line-height: normal; \
+        width: 160px; \
+      ";
+        div.innerHTML = "<div><p style=\"font-size: 14px;line-height: 1;\">" + Object.GetName() + "</p> <br><p style=\"font-size: 11px;line-height: 0;\">" + Object.GetBranch() + "</p> <br><p style=\"font-size: 11px;line-height: 0;\">---------------------------</p>";
+        var t = document.getElementById("kabsearchform5");
+        t.appendChild(div);
+
+        mas5.push(div);
+    }
+    if (c == 6) {
+        document.getElementById('kabsearchform6').style.cssText = "display: block; \
+        position: absolute; \
+        background-color: #fafafa; \
+        border: solid 1px #a3a3a3; \
+        padding: 5px 10px; \
+        font-family: Arial; \
+        -webkit-box-shadow: inset 0 2px 3px rgba(0, 0, 0, .1); \
+        -moz-box-shadow: inset 0 2px 3px rgba(0, 0, 0, .1); \
+        box-shadow: inset 0 2px 3px rgba(0, 0, 0, .1); \
+        -webkit-border-radius: 5px;  \
+        -moz-border-radius: 5px; \
+        border-radius: 5px; \
+        -webkit-appearance: none; \
+        z-index: 99; \
+        line-height: normal; \
+        width: 160px; \
+      ";
+        div.innerHTML = "<div><p style=\"font-size: 14px;line-height: 1;\">" + Object.GetName() + "</p> <br><p style=\"font-size: 11px;line-height: 0;\">" + Object.GetBranch() + "</p> <br><p style=\"font-size: 11px;line-height: 0;\">---------------------------</p>";
+        var t = document.getElementById("kabsearchform6");
+        t.appendChild(div);
+
+        mas6.push(div);
     }
 } //Відображення випадаючих списків
 
@@ -240,11 +510,67 @@ $("#kabsearchform2").on("click", ".mosearchresult", function () {
     document.getElementById('kabsearchform2').style.cssText = "display: none;";
     var t = document.getElementById("kabsearchform2");
 
-    for (var i = 0; i < mas.length; i++) {
+    for (var i = 0; i < mas2.length; i++) {
         t.removeChild(mas2[i]);
         mas2.splice(0, 1);
     }
 }); //Обрання станції із списку по другому полю
+
+$("#kabsearchform3").on("click", ".mosearchresult", function () {
+    flag = true;
+    c = 0;
+    var St = $(this).attr("data-name");
+    document.getElementById('cod').value = St;
+    document.getElementById('kabsearchform3').style.cssText = "display: none;";
+    var t = document.getElementById("kabsearchform3");
+
+    for (var i = 0; i < mas3.length; i++) {
+        t.removeChild(mas3[i]);
+        mas3.splice(0, 1);
+    }
+}); //
+
+$("#kabsearchform4").on("click", ".mosearchresult", function () {
+    flag = true;
+    c = 0;
+    var St = $(this).attr("data-name");
+    document.getElementById('numSR').value = St;
+    document.getElementById('kabsearchform4').style.cssText = "display: none;";
+    var t = document.getElementById("kabsearchform4");
+
+    for (var i = 0; i < mas4.length; i++) {
+        t.removeChild(mas4[i]);
+        mas4.splice(0, 1);
+    }
+}); //
+
+$("#kabsearchform5").on("click", ".mosearchresult", function () {
+    flag = true;
+    c = 0;
+    var St = $(this).attr("data-name");
+    document.getElementById('numSR2').value = St;
+    document.getElementById('kabsearchform5').style.cssText = "display: none;";
+    var t = document.getElementById("kabsearchform5");
+
+    for (var i = 0; i < mas5.length; i++) {
+        t.removeChild(mas5[i]);
+        mas5.splice(0, 1);
+    }
+}); //
+
+$("#kabsearchform6").on("click", ".mosearchresult", function () {
+    flag = true;
+    c = 0;
+    var St = $(this).attr("data-name");
+    document.getElementById('numS').value = St;
+    document.getElementById('kabsearchform6').style.cssText = "display: none;";
+    var t = document.getElementById("kabsearchform5");
+
+    for (var i = 0; i < mas6.length; i++) {
+        t.removeChild(mas6[i]);
+        mas3.splice(0, 1);
+    }
+}); //
 
 function Station() {
     var Name = "";
@@ -740,6 +1066,242 @@ $('#add').click(function () {
 
 $('#edit').click(function () {
     if (menu != 2) {
+        var Num = 0;
+
+        $('#addRedSt').click(function () {
+            var error = "";
+            var ipST = $('#ipST').val();
+            var COST = $('#COST').val();
+            var NAMEST = $('#NAMEST').val();
+            var BST = $('#BST').val();
+
+            for (i = 0; i < ipST.length; i++) {
+                if (Check(ipST.charAt(i, 0)) || ipST.match(/^\d+$/) == null || ipST.length < 6) {
+
+                    error += "Неправильний код. ";
+                    $('#ipST').css("border-color", "#f7b4b4");
+                    break;
+                }
+            }
+            
+            if (COST == "" || NAMEST == "" || BST == "") {
+                error += "Заповніть усі поля. ";
+                $('#ipST').css("border-color", "#f7b4b4");
+                $('#COST').css("border-color", "#f7b4b4");
+                $('#NAMEST').css("border-color", "#f7b4b4");
+                $('#BST').css("border-color", "#f7b4b4");
+            }
+            
+            if (error == "") {
+                $.ajax({
+                    url: "php/CheckWay.php",
+                    type: "POST",
+                    cache: false,
+                    data: ({
+                        'C': "14",
+                        'ipST': ipST,
+                        'COST': COST,
+                        'NAMEST': NAMEST,
+                        'BST': BST,
+                        'Way': 0
+                    }),
+                    dataType: "html",
+                    beforeSend: ADN,
+                    success: RedNum
+                });
+            } else {
+                document.getElementById('message').innerHTML = '';
+                document.getElementById('message').innerHTML = error;
+                error = "";
+            }
+        });
+
+        $('#DelRedSt').click(function () {
+            var error = "";
+            var ipST = $('#ipST').val();
+            
+            for (i = 0; i < ipST.length; i++) {
+                if (Check(ipST.charAt(i, 0)) || ipST.match(/^\d+$/) == null || ipST.length < 6) {
+
+                    error += "Неправильний код. ";
+                    $('#ipST').css("border-color", "#f7b4b4");
+                    break;
+                }
+            }
+            
+            if (error == "") {
+                $.ajax({
+                    url: "php/CheckWay.php",
+                    type: "POST",
+                    cache: false,
+                    data: ({
+                        'C': "14",
+                        'ipST': ipST,
+                        'Way': 1
+                    }),
+                    dataType: "html",
+                    beforeSend: ADN,
+                    success: RedNum
+                });
+            } else {
+                document.getElementById('message').innerHTML = '';
+                document.getElementById('message').innerHTML = error;
+                error = "";
+            }
+        });
+
+        $('#rednum').click(function () {
+            Num = $('#RedNum').val();
+            var error = checkNum(Num);
+            if (error == "") {
+                $('#RedNum').attr("disabled", "disabled");
+                document.getElementById('message').innerHTML = 'Строка повідомлень!';
+                $('#addRed').removeAttr("disabled");
+            } else {
+                document.getElementById('message').innerHTML = '';
+                document.getElementById('message').innerHTML = error;
+                error = "";
+            }
+        });
+
+        $('#NewRedNum').click(function () {
+            Num = 0;
+            $('#RedNum').removeAttr("disabled");
+            $('#addRed').attr("disabled", "disabled");
+        });
+
+        $('#addRed').click(function () {
+
+            var error = "";
+            var dat = $('#datR').val();
+            var CR = $('#numCR').val();
+            var SR = $('#numSR').val();
+            var SR2 = $('#numSR2').val();
+            var Type = $('#Type_RE').val();
+            var Time_1 = $('#Time1').val();
+            var Time_2 = $('#Time2').val();
+            var TADD = $('#TADD').val();
+
+            if (dat == "") {
+                dat = 0;
+            }
+            if (CR == "") {
+                CR = 0;
+            }
+            if (SR == "") {
+                SR = 0;
+            }
+            if (SR2 == "") {
+                SR2 = 0;
+            }
+
+            if (dat == 0 && CR == 0 && SR == 0) {
+                error = "Нічого не введено. ";
+            } else {
+
+                if (CR != 0) {
+
+                    for (i = 0; i < CR.length; i++) {
+                        if (Check(CR.charAt(i, 0)) || CR.match(/^\d+$/) == null || CR.length < 7) {
+
+                            error += "Неправильний код. ";
+                            $('#numCR').css("border-color", "#f7b4b4");
+                            break;
+                        }
+                    }
+
+                }
+                if (SR != 0) {
+
+                    if (Time_1 != "") {
+                        for (var i = 0; i < Time_1.length; i++) {
+                            if (Check(Time_1[i], 12) || Time_1[2] != ':' || Time_1.length != 5 || Time_1[0] + Time_1[1] > 23 || Time_1[3] + Time_1[4] > 59) {
+                                error += "Неправильний час1. ";
+                                $('#Time_1').css("border-color", "#f7b4b4");
+                                break;
+                            }
+                        }
+                    } else {
+                        if (Time_2 == "") {
+                            error += "Нема часу1. ";
+                            $('#Time_1').css("border-color", "#f7b4b4");
+                        }
+                    }
+
+                    if (Time_2 != "") {
+                        for (var i = 0; i < Time_2.length; i++) {
+                            if (Check(Time_2[i], 12) || Time_2[2] != ':' || Time_2.length != 5 || Time_2[0] + Time_2[1] > 23 || Time_2[3] + Time_2[4] > 59) {
+                                error += "Неправильний час2. ";
+                                $('#Time_2').css("border-color", "#f7b4b4");
+                                break;
+                            }
+                        }
+                    } else {
+                        if (Time_1 == "") {
+                            error += "Нема часу2. ";
+                            $('#Time_2').css("border-color", "#f7b4b4");
+                        }
+                    }
+
+                    if (Time_1 == "") {
+                        Time_1 = "0";
+                    }
+                    if (Time_2 == "") {
+                        Time_2 = "0";
+                    }
+
+                    if (SR2 == 0) {
+                        error += "Нема коду станції. ";
+                        $('#numSR2').css("border-color", "#f7b4b4");
+                    } else {
+                        for (i = 0; i < SR.length; i++) {
+                            if (Check(SR.charAt(i, 0)) || SR.match(/^\d+$/) == null || SR.length < 6) {
+
+                                error += "Неправильний код. ";
+                                $('#numSR').css("border-color", "#f7b4b4");
+                                break;
+                            }
+                        }
+                        for (i = 0; i < SR2.length; i++) {
+                            if (Check(SR2.charAt(i, 0)) || SR2.match(/^\d+$/) == null || SR2.length < 6) {
+
+                                error += "Неправильний код. ";
+                                $('#numSR2').css("border-color", "#f7b4b4");
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
+
+            if (error == "") {
+                $.ajax({
+                    url: "php/CheckWay.php",
+                    type: "POST",
+                    cache: false,
+                    data: ({
+                        'C': "12",
+                        'dat': dat,
+                        'SR': SR,
+                        'SR2': SR2,
+                        'CR': CR,
+                        'Type': Type,
+                        'T1': Time_1,
+                        'T2': Time_2,
+                        'TADD': TADD,
+                        'num': Num
+                    }),
+                    dataType: "html",
+                    beforeSend: ADN,
+                    success: RedNum
+                });
+            } else {
+                document.getElementById('message').innerHTML = '';
+                document.getElementById('message').innerHTML = error;
+                error = "";
+            }
+        }); //Кнопка видалення станції або вагону
+
         if (y == 1) {
             $('#mes').toggle();
             y++;
@@ -930,9 +1492,12 @@ $('#delete').click(function () {
         }); //Кнопка видалення графіку
 
         $('#defoult').click(function () {
-            $('#datD').removeAttr("disabled");
-            $('#numS').removeAttr("disabled");
-            $('#numC').removeAttr("disabled");
+            //$('#datD').removeAttr("disabled");
+            //$('#numS').removeAttr("disabled");
+            //$('#numC').removeAttr("disabled");
+            $('#datD').attr("disabled", "disabled");
+            $('#numS').attr("disabled", "disabled");
+            $('#numC').attr("disabled", "disabled");
             $('#dell').removeAttr("disabled");
             $('#numm').removeAttr("disabled");
             $('#delnum').removeAttr("disabled");
@@ -967,6 +1532,9 @@ $('#delete').click(function () {
 function ADN() {
     $('#delnum').attr("disabled", "disabled");
     $('#dell').attr("disabled", "disabled");
+    $('#addRed').attr("disabled", "disabled");
+    $('#addRedSt').attr("disabled", "disabled");
+    $('#DelRedSt').attr("disabled", "disabled");
 } //Доки чеваємо відповіді сервера
 
 function checkNum(num) {
@@ -991,6 +1559,20 @@ function checkNum(num) {
 function DelNum(data) {
     $('#dell').removeAttr("disabled");
     $('#delnum').removeAttr("disabled");
+
+    if (data == "true") {
+        document.getElementById('message').innerHTML = '';
+        document.getElementById('message').innerHTML = "Successfully!";
+    } else {
+        document.getElementById('message').innerHTML = '';
+        document.getElementById('message').innerHTML = data;
+    }
+} //Видалення по номеру
+
+function RedNum(data) {
+    $('#addRed').removeAttr("disabled");
+    $('#addRedSt').removeAttr("disabled");
+    $('#DelRedSt').removeAttr("disabled");
 
     if (data == "true") {
         document.getElementById('message').innerHTML = '';
@@ -1412,4 +1994,4 @@ function Check(str, i) {
         }
     }
     return p;
-} *///Кодування кирилиці
+} */ //Кодування кирилиці

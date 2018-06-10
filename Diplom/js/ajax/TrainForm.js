@@ -132,6 +132,15 @@ function ColDiv(col, Object) {
     var t = document.getElementById("box_text");
     t.appendChild(span);
     masDOM.push(span);
+    
+    var span = document.createElement('span');
+    span.setAttribute('data-num', Object.GetNum());
+    span.setAttribute('data-St1', Object.GetStart());
+    span.setAttribute('data-St2', Object.GetFinish());
+    span.className = "But";
+    span.innerHTML = "Детально";
+    t.appendChild(span);
+    masDOM.push(span);
 } //Вивід інформації
 
 function CoAtt() {
@@ -277,6 +286,7 @@ $("#box_text").on("click", ".Way", function () {
         type: "POST",
         cache: false,
         data: ({
+            'C': 20,
             'Num': $(this).attr("data-num"),
             'St_1': St_1,
             'St_2': St_2
@@ -417,211 +427,51 @@ function NewLine(data) {
     SetMarker(Loc2, title2, 2);
 } //Обробка відповіді сервера по координатам
 
-/*function RU_EN(a) {
-    var p = "";
+function Cookie(t) {
+        setCookie("Num1", t.attr("data-num")/*, options*/); //Установить куки
+        setCookie("St_1", escape(t.attr("data-St1"))); //Установить куки
+        setCookie("St_2", escape(t.attr("data-St2"))); //Установить куки
+}
 
-    for (var i = 0; i < a.length; i++) {
-        if (a[i] == "а") {
-            p += "a";
-        }
-        if (a[i] == "б") {
-            p += "b";
-        }
-        if (a[i] == "в") {
-            p += "c";
-        }
-        if (a[i] == "г") {
-            p += "d";
-        }
-        if (a[i] == "д") {
-            p += "e";
-        }
-        if (a[i] == "е") {
-            p += "f";
-        }
-        if (a[i] == "є") {
-            p += "g";
-        }
-        if (a[i] == "ж") {
-            p += "h";
-        }
-        if (a[i] == "з") {
-            p += "i";
-        }
-        if (a[i] == "и") {
-            p += "j";
-        }
-        if (a[i] == "і") {
-            p += "k";
-        }
-        if (a[i] == "ї") {
-            p += "l";
-        }
-        if (a[i] == "й") {
-            p += "m";
-        }
-        if (a[i] == "к") {
-            p += "n";
-        }
-        if (a[i] == "л") {
-            p += "o";
-        }
-        if (a[i] == "м") {
-            p += "p";
-        }
-        if (a[i] == "н") {
-            p += "q";
-        }
-        if (a[i] == "о") {
-            p += "r";
-        }
-        if (a[i] == "п") {
-            p += "s";
-        }
-        if (a[i] == "р") {
-            p += "t";
-        }
-        if (a[i] == "с") {
-            p += "u";
-        }
-        if (a[i] == "т") {
-            p += "v";
-        }
-        if (a[i] == "у") {
-            p += "w";
-        }
-        if (a[i] == "ф") {
-            p += "x";
-        }
-        if (a[i] == "х") {
-            p += "y";
-        }
-        if (a[i] == "ш") {
-            p += "z";
-        }
-        if (a[i] == "ц") {
-            p += "+";
-        }
-        if (a[i] == "ч") {
-            p += "=";
-        }
-        if (a[i] == "щ") {
-            p += "&";
-        }
-        if (a[i] == "ь") {
-            p += "~";
-        }
-        if (a[i] == "ю") {
-            p += "[";
-        }
-        if (a[i] == "я") {
-            p += "]";
-        }
-        if (a[i] == "А") {
-            p += "A";
-        }
-        if (a[i] == "Б") {
-            p += "B";
-        }
-        if (a[i] == "В") {
-            p += "C";
-        }
-        if (a[i] == "Г") {
-            p += "D";
-        }
-        if (a[i] == "Д") {
-            p += "E";
-        }
-        if (a[i] == "Е") {
-            p += "F";
-        }
-        if (a[i] == "Є") {
-            p += "G";
-        }
-        if (a[i] == "Ж") {
-            p += "H";
-        }
-        if (a[i] == "З") {
-            p += "I";
-        }
-        if (a[i] == "И") {
-            p += "J";
-        }
-        if (a[i] == "І") {
-            p += "K";
-        }
-        if (a[i] == "Ї") {
-            p += "L";
-        }
-        if (a[i] == "Й") {
-            p += "M";
-        }
-        if (a[i] == "К") {
-            p += "N";
-        }
-        if (a[i] == "Л") {
-            p += "O";
-        }
-        if (a[i] == "М") {
-            p += "P";
-        }
-        if (a[i] == "Н") {
-            p += "Q";
-        }
-        if (a[i] == "О") {
-            p += "R";
-        }
-        if (a[i] == "П") {
-            p += "S";
-        }
-        if (a[i] == "Р") {
-            p += "T";
-        }
-        if (a[i] == "С") {
-            p += "U";
-        }
-        if (a[i] == "Т") {
-            p += "V";
-        }
-        if (a[i] == "У") {
-            p += "W";
-        }
-        if (a[i] == "Ф") {
-            p += "X";
-        }
-        if (a[i] == "Х") {
-            p += "Y";
-        }
-        if (a[i] == "Ш") {
-            p += "Z";
-        }
-        if (a[i] == "Ц") {
-            p += "!";
-        }
-        if (a[i] == "Ч") {
-            p += "@";
-        }
-        if (a[i] == "Щ") {
-            p += "#";
-        }
-        if (a[i] == "Ю") {
-            p += "$";
-        }
-        if (a[i] == "Я") {
-            p += "%";
-        }
-        if (a[i] == " ") {
-            p += "_";
-        }
-        if (a[i] == "-") {
-            p += "-";
-        }
-        if (a[i] == "'") {
-            p += "''";
-        }
-        if (a[i] == ".") {
-            p += ".";
-        }
+$("#box_text").on("click", ".But", function () {
+    Cookie($(this));
+    window.open('Details.html');
+}); //Обрання маршруту зі списку
+
+function getCookie(name) {
+  var matches = document.cookie.match(new RegExp(
+    "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+  ));
+  return matches ? decodeURIComponent(matches[1]) : undefined;
+}
+
+// устанавливает cookie с именем name и значением value
+// options - объект с свойствами cookie (expires, path, domain, secure)
+function setCookie(name, value, options) {
+  options = options || {};
+
+  var expires = options.expires;
+
+  if (typeof expires == "number" && expires) {
+    var d = new Date();
+    d.setTime(d.getTime() + expires * 1000);
+    expires = options.expires = d;
+  }
+  if (expires && expires.toUTCString) {
+    options.expires = expires.toUTCString();
+  }
+
+  value = encodeURIComponent(value);
+
+  var updatedCookie = name + "=" + value;
+
+  for (var propName in options) {
+    updatedCookie += "; " + propName;
+    var propValue = options[propName];
+    if (propValue !== true) {
+      updatedCookie += "=" + propValue;
     }
-    return p;
-} *///Кодування кирилиці
+  }
+
+  document.cookie = updatedCookie;
+}

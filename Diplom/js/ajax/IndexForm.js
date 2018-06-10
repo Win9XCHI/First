@@ -2,6 +2,7 @@
 
 var c = 0;
 var flag = false;
+var flagBut = false;
 var mas = [];
 var mas2 = [];
 var masDOM = [];
@@ -9,8 +10,14 @@ var flagLine = false;
 var map;
 var marker1;
 var marker2;
+var marker3;
 var flightPath;
+var St_1T;
+var St_2T;
+var St_3T;
 $('#box_text').toggle();
+var Mark = 0;
+var Line = 0;
 
 //Вирахування дати
 var d = new Date();
@@ -637,9 +644,42 @@ function ColDiv(col, Object) {
     div.setAttribute('data-num', Object.GetNum());
     div.setAttribute('data-St1', Object.GetSt1());
     div.setAttribute('data-St2', Object.GetSt2());
+    div.setAttribute('data-dat', Object.GetStartTime());
 
     div.className = "Way";
-    div.innerHTML = "<p> &nbsp;&nbsp;<span>" + col + ".</span> <span style='padding-left:50px;'> </span><span>" + Object.GetStart() + " - " + Object.GetFinish() + "</span> </p> <p> <span style='padding-left:30px;'> </span> <span>В дорозі: " + Object.GetTimeRoute() + " </span><span style='padding-left:50px;'> </span> <span>" + Object.GetStartTime() + "</span><span style='padding-left:50px;'> </span>  </p><p> <span style='padding-left:200px;'> </span><span>" + Object.GetFinishTime() + "</span> <span style='padding-left:50px;'> </span></p>";
+    div.innerHTML = "<p> &nbsp;&nbsp;<span>" + col + ".</span> <span style='padding-left:50px;'> </span><span>" + Object.GetNum() + "</span><span style='padding-left:20px;'></span><span>" + Object.GetStart() + " - " + Object.GetFinish() + "</span> </p> <p> <span style='padding-left:30px;'> </span> <span>В дорозі: " + Object.GetTimeRoute() + " </span><span style='padding-left:50px;'> </span> <span>" + Object.GetStartTime() + "</span><span style='padding-left:50px;'> </span>  </p><p> <span style='padding-left:210px;'> </span><span>" + Object.GetFinishTime() + "</span> <span style='padding-left:50px;'> </span></p>";
+    
+    var divZ = document.createElement('div');
+    divZ.className = "Z";
+    
+    var div2 = document.createElement('div');
+    div2.setAttribute('data-num', Object.GetNum());
+    div2.setAttribute('data-St1', Object.GetStart());
+    div2.setAttribute('data-St2', Object.GetFinish());
+    div2.setAttribute('data-Time11', Object.GetStartTime());
+    div2.setAttribute('data-Time12', Object.GetFinishTime());
+    div2.setAttribute('data-TimeRoad1', Object.GetTimeRoute());
+
+    div2.className = "detal";
+    div2.innerHTML = "<p>Детально</p>";
+
+    divZ.appendChild(div2);
+
+    if (Object.GetNum() > 999) {
+        var div2 = document.createElement('div');
+        div2.setAttribute('data-num', Object.GetNum());
+        div2.setAttribute('data-St1', Object.GetSt1());
+        div2.setAttribute('data-St2', Object.GetSt2());
+        div2.setAttribute('data-Time11', Object.GetStartTime());
+        div2.setAttribute('data-Time12', Object.GetFinishTime());
+        div2.setAttribute('data-TimeRoad1', Object.GetTimeRoute());
+
+        div2.className = "But";
+        div2.innerHTML = "<p>Оформити</p>";
+
+        divZ.appendChild(div2);
+    }
+    div.appendChild(divZ);
     var t = document.getElementById("box_text");
     t.appendChild(div);
 
@@ -666,6 +706,173 @@ function Computing(data) {
     $('#computing').removeAttr("disabled");
 } //Інформація з сервера
 
+function Transfer(data) {
+    if (data == "Not Train") {
+        alert("Маршруту не знайдено");
+    } else {
+        var t = document.getElementById("box_text");
+        t.getAttribute('hidden', 'true');
+        setTimeout(function () {}, 10000);
+        $('#St_1').val("");
+        $('#St_2').val("");
+        $('#dat').val("");
+        var col = 1;
+
+        data = JSON.parse(data);
+        console.log(data);
+
+        for (var i = 1; i < data[0] + 1; i += 2) {
+            console.log(data[i][0], i);
+
+            var div = document.createElement('div');
+            div.setAttribute('id', 'new' + col);
+            div.setAttribute('data-num1', data[i][0].id);
+            div.setAttribute('data-num2', data[i + 1][0].id);
+            div.setAttribute('data-St1', data[i][0].St_1);
+            div.setAttribute('data-St2', data[i][0].St_2);
+            div.setAttribute('data-St3', data[i + 1][0].St_2);
+
+            div.className = "WayTrans";
+            div.innerHTML = "<p> &nbsp;&nbsp;<span>" + col + ".</span> <span style='padding-left:50px;'> " + data[i][0].id + " </span><span>" + data[i][0].Start + " - " + data[i][0].Finish + "</span> </p> <p> <span style='padding-left:30px;'> </span> <span>В дорозі: " + data[i][0].Time_roat + " </span><span style='padding-left:50px;'> </span> <span>" + data[i][0].St_1 + " " + data[i][0].Time_1 + "</span><span style='padding-left:50px;'> </span>  </p><p> <span style='padding-left:210px;'> </span><span>" + data[i][0].St_2 + " " + data[i][0].Time_2 + "</span> <span style='padding-left:50px;'> </span> </p><p> <span style='padding-left:100px;'> Час очікування: " + data[i + 1][0].Time_Expectation + "</p><span> --------------------------------------------------------------------------------</span><p> <span style='padding-left:200px;'> </span><span>" + data[i][0].St_2 + " " + data[i + 1][0].Time_1 + "</span> </p> <p>  </span> <span style='padding-left:30px;'> </span> <span>В дорозі: " + data[i + 1][0].Time_roat + " </span><span style='padding-left:50px;'> </span> <span>" + data[i + 1][0].St_2 + " " + data[i + 1][0].Time_2 + "</span><span style='padding-left:50px;'> </span> </p><p><span style='padding-left:100px;'> " + data[i + 1][0].id + " </span><span>" + data[i + 1][0].Start + " - " + data[i + 1][0].Finish + "</span></p>";
+
+            var divZ = document.createElement('div');
+            divZ.className = "Z";
+
+            var div2 = document.createElement('div');
+            div2.setAttribute('id', 'new' + col);
+            div2.setAttribute('data-num1', data[i][0].id);
+            div2.setAttribute('data-num2', data[i + 1][0].id);
+            div2.setAttribute('data-St1', data[i][0].St_1);
+            div2.setAttribute('data-St2', data[i][0].St_2);
+            div2.setAttribute('data-St3', data[i + 1][0].St_2);
+            
+            div2.setAttribute('data-Time11', data[i][0].Time_1);
+            div2.setAttribute('data-Time12', data[i][0].Time_2);
+            div2.setAttribute('data-TimeRoad1', data[i][0].Time_roat);
+            
+            div2.setAttribute('data-Time21', data[i + 1][0].Time_1);
+            div2.setAttribute('data-Time22', data[i + 1][0].Time_2);
+            div2.setAttribute('data-TimeRoad2', data[i + 1][0].Time_roat);
+
+            div2.className = "detal";
+            div2.innerHTML = "<p>Детально</p>";
+
+            divZ.appendChild(div2);
+            
+            var div2 = document.createElement('div');
+            div2.setAttribute('id', 'new' + col);
+            div2.setAttribute('data-num1', data[i][0].id);
+            div2.setAttribute('data-num2', data[i + 1][0].id);
+            div2.setAttribute('data-St1', data[i][0].St_1);
+            div2.setAttribute('data-St2', data[i][0].St_2);
+            div2.setAttribute('data-St3', data[i + 1][0].St_2);
+            
+            div2.setAttribute('data-Time11', data[i][0].Time_1);
+            div2.setAttribute('data-Time12', data[i][0].Time_2);
+            div2.setAttribute('data-TimeRoad1', data[i][0].Time_roat);
+            
+            div2.setAttribute('data-Time21', data[i + 1][0].Time_1);
+            div2.setAttribute('data-Time22', data[i + 1][0].Time_2);
+            div2.setAttribute('data-TimeRoad2', data[i + 1][0].Time_roat);
+
+            div2.className = "But";
+            div2.innerHTML = "<p>Оформити</p>";
+
+            divZ.appendChild(div2);
+            div.appendChild(divZ);
+            var t = document.getElementById("box_text");
+            t.appendChild(div);
+
+            masDOM.push(div);
+            col++;
+        }
+    }
+    data = "";
+    $('#computing').removeAttr("disabled");
+} //Інформація з сервера
+
+$("#box_text").on("click", ".WayTrans", function () {
+    St_1T = $(this).attr("data-St1");
+    St_2T = $(this).attr("data-St2");
+    St_3T = $(this).attr("data-St3");
+
+    $.ajax({
+        url: "php/CheckWay.php",
+        type: "POST",
+        cache: false,
+        data: ({
+            'C': 21,
+            'Num1': $(this).attr("data-num1"),
+            'Num2': $(this).attr("data-num2"),
+            'St_1': St_1T,
+            'St_2': St_2T,
+            'St_3': St_3T
+        }),
+        dataType: "html",
+        success: NewLineT
+    });
+}); //Обрання маршруту зі списку
+
+function NewLineT(data) {
+    ClearMarkerAndLine();
+    var t = 1;
+    var re = /\s*,\s*/;
+    var tagList;
+    var Coo1 = 0;
+    var Coo2 = 0;
+    var flightPlanCoordinates = [];
+
+
+    data = JSON.parse(data);
+
+    for (var i = 0; i < data.length; i++) {
+        Coo1 = 0;
+        Coo2 = 0;
+
+        if (i == data.length - 1) {
+            tagList = data[i].Coordinates.split(re);
+                data[i].Coordinates = {
+                    lat: +tagList[0],
+                    lng: +tagList[1]
+                };
+            flightPlanCoordinates.push(data[i].Coordinates);
+            console.log(data[i].Coordinates);
+            
+            if (data[i].Name_S == St_1T || data[i].Name_S == St_2T || data[i].Name_S == St_3T) {
+                SetMarker(data[i].Coordinates, data[i].Name_S, t);
+            }
+            SetLine(flightPlanCoordinates);
+            flightPlanCoordinates = [];
+        } else {
+
+            if (data[i].Name_S != data[i + 1].Name_S) {
+                tagList = data[i].Coordinates.split(re);
+                data[i].Coordinates = {
+                    lat: +tagList[0],
+                    lng: +tagList[1]
+                };
+                
+                flightPlanCoordinates.push(data[i].Coordinates);                                
+                console.log(data[i].Coordinates);
+
+                if (data[i].Name_S == St_1T || data[i].Name_S == St_2T || data[i].Name_S == St_3T) {
+                    SetMarker(data[i].Coordinates, data[i].Name_S, t);
+                    t++;
+                }
+            }
+            /*else {
+                           flightPlanCoordinates.push(data[i].Coordinates);
+                           if (data[i].Name_S == St_1T || data[i].Name_S == St_2T || data[i].Name_S == St_3T) {
+                               SetMarker(data[i].Coordinates, data[i].Name_S, t);
+                           }
+                           SetLine(flightPlanCoordinates);
+                           flightPlanCoordinates = [];
+                       }*/
+        }
+
+    }
+} //Обробка відповіді сервера по координатам
+
 $('#computing').click(function () {
 
     var t = document.getElementById("box_text");
@@ -681,7 +888,7 @@ $('#computing').click(function () {
         var St_2 = $('#St_2').val();
         var dat = $('#dat').val();
         var trans = $('#trans').val();
-        var sort = $('#sort').val();
+        //var sort = $('#sort').val();
 
         var err = "";
         var now = new Date();
@@ -755,6 +962,11 @@ $('#computing').click(function () {
             err += "Нема дати. ";
             $('#dat').css("border-color", "#f7b4b4");
         }
+        
+        if (now.getTime() > Entr.getTime() && err == "") {
+            err += "Неможна обирати минулу дату. ";
+            $('#dat').css("border-color", "#f7b4b4");
+        }
 
         if (St_1 == "" && err == "") {
             err += "Неправильна перша станція. ";
@@ -782,34 +994,65 @@ $('#computing').click(function () {
             alert(err);
         } else {
 
-
-            $.ajax({
-                url: "php/CheckWay.php",
-                type: "POST",
-                cache: false,
-                data: ({
-                    'C': "0",
-                    'St_1': St_1,
-                    'St_2': St_2,
-                    'dat': dat,
-                    'v1': v1,
-                    'v2': v2,
-                    'v3': v3,
-                    'v4': v4,
-                    'v5': v5,
-                    't1': t1,
-                    't2': t2,
-                    't3': t3,
-                    't4': t4,
-                    't5': t5,
-                    't6': t6,
-                    'trans': trans,
-                    'sort': sort
-                }),
-                dataType: "html",
-                beforeSend: CoAtt,
-                success: Computing
-            });
+            if (trans == 1) {
+                flagBut = false;
+                $.ajax({
+                    url: "php/CheckWay.php",
+                    type: "POST",
+                    cache: false,
+                    data: ({
+                        'C': "0",
+                        'St_1': St_1,
+                        'St_2': St_2,
+                        'dat': dat,
+                        'v1': v1,
+                        'v2': v2,
+                        'v3': v3,
+                        'v4': v4,
+                        'v5': v5,
+                        't1': t1,
+                        't2': t2,
+                        't3': t3,
+                        't4': t4,
+                        't5': t5,
+                        't6': t6,
+                        'trans': trans
+                        //'sort': sort
+                    }),
+                    dataType: "html",
+                    beforeSend: CoAtt,
+                    success: Computing
+                });
+            } else {
+                flagBut = true;
+                $.ajax({
+                    url: "php/CheckWay.php",
+                    type: "POST",
+                    cache: false,
+                    data: ({
+                        'C': "0",
+                        'St_1': St_1,
+                        'St_2': St_2,
+                        'dat': dat,
+                        'v1': v1,
+                        'v2': v2,
+                        'v3': v3,
+                        'v4': v4,
+                        'v5': v5,
+                        't1': t1,
+                        't2': t2,
+                        't3': t3,
+                        't4': t4,
+                        't5': t5,
+                        't6': t6,
+                        'trans': trans
+                        //'sort': sort
+                    }),
+                    dataType: "html",
+                    beforeSend: CoAtt,
+                    success: Transfer
+                });
+            }
         }
     } else {
         alert("Виберіть станцію");
@@ -847,6 +1090,15 @@ function SetMarker(location, title, MarkerCounter) {
         });
     }
 
+    if (MarkerCounter == 3) {
+        marker3 = new google.maps.Marker({
+            position: location, //new google.maps.LatLng(locations[i][1], locations[i][2]),
+            map: map,
+            title: title
+        });
+    }
+    Mark++;
+
 } //Поставити маркер
 
 function SetLine(flightPlanCoordinates) {
@@ -865,8 +1117,12 @@ function ClearMarkerAndLine() {
     if (flagLine) {
         marker1.setMap(null);
         marker2.setMap(null);
+        if (Mark > 2) {
+            marker3.setMap(null);
+        }
         flightPath.setMap(null);
         flagLine = false;
+        Mark = 0;
     }
 } //Прибрати маркери та криву
 
@@ -879,6 +1135,7 @@ $("#box_text").on("click", ".Way", function () {
         type: "POST",
         cache: false,
         data: ({
+            'C': 20,
             'Num': $(this).attr("data-num"),
             'St_1': St_1,
             'St_2': St_2
@@ -1020,6 +1277,88 @@ function NewLine(data) {
     SetMarker(Loc1, title1, 1);
     SetMarker(Loc2, title2, 2);
 } //Обробка відповіді сервера по координатам
+
+function Cookie(t) {
+    if (!flagBut) {
+        setCookie("Num1", t.attr("data-num")/*, options*/); //Установить куки
+        setCookie("St_1", escape(t.attr("data-St1"))); //Установить куки
+        setCookie("St_2", escape(t.attr("data-St2"))); //Установить куки
+        
+        setCookie("Time11", escape(t.attr("data-Time11"))); //Установить куки
+        setCookie("Time12", escape(t.attr("data-Time12"))); //Установить куки
+        setCookie("TimeRoad1", escape(t.attr("data-TimeRoad1"))); //Установить куки
+    }
+    else {
+        setCookie("Num1", t.attr("data-num1")); //Установить куки
+        setCookie("Num2", t.attr("data-num2")); //Установить куки
+        setCookie("St_1", escape(t.attr("data-St1"))); //Установить куки
+        setCookie("St_2", escape(t.attr("data-St2"))); //Установить куки
+        setCookie("St_3", escape(t.attr("data-St3"))); //Установить куки
+        
+        setCookie("Time11", escape(t.attr("data-Time11"))); //Установить куки
+        setCookie("Time12", escape(t.attr("data-Time12"))); //Установить куки
+        setCookie("TimeRoad1", escape(t.attr("data-TimeRoad1"))); //Установить куки
+        
+        setCookie("Time21", escape(t.attr("data-Time21"))); //Установить куки
+        setCookie("Time22", escape(t.attr("data-Time22"))); //Установить куки
+        setCookie("TimeRoad2", escape(t.attr("data-TimeRoad2"))); //Установить куки
+    }
+}
+
+$("#box_text").on("click", ".But", function () {
+    Cookie($(this));
+    window.open('Pay.html');
+}); //Обрання маршруту зі списку
+
+$("#box_text").on("click", ".detal", function () {
+    Cookie($(this));
+    window.open('Details.html');
+}); //Обрання маршруту зі списку
+
+function getCookie(name) {
+  var matches = document.cookie.match(new RegExp(
+    "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+  ));
+  return matches ? decodeURIComponent(matches[1]) : undefined;
+}
+
+// устанавливает cookie с именем name и значением value
+// options - объект с свойствами cookie (expires, path, domain, secure)
+function setCookie(name, value, options) {
+  options = options || {};
+
+  var expires = options.expires;
+
+  if (typeof expires == "number" && expires) {
+    var d = new Date();
+    d.setTime(d.getTime() + expires * 1000);
+    expires = options.expires = d;
+  }
+  if (expires && expires.toUTCString) {
+    options.expires = expires.toUTCString();
+  }
+
+  value = encodeURIComponent(value);
+
+  var updatedCookie = name + "=" + value;
+
+  for (var propName in options) {
+    updatedCookie += "; " + propName;
+    var propValue = options[propName];
+    if (propValue !== true) {
+      updatedCookie += "=" + propValue;
+    }
+  }
+
+  document.cookie = updatedCookie;
+}
+
+// удаляет cookie с именем name
+function deleteCookie(name) {
+  setCookie(name, "", {
+    expires: -1
+  })
+}
 
 /*function RU_EN(a) {
     var p = "";
@@ -1229,7 +1568,7 @@ function NewLine(data) {
     }
     return p;
 } //Кодування кирилиці
-
+*/
 function Check(str) {
     if (str == '!') {
         return true;
@@ -1319,4 +1658,4 @@ function Check(str) {
         return true;
     }
     return false;
-} *///Перевірка на недопустимі символи
+} //Перевірка на недопустимі символи

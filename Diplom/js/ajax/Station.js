@@ -492,6 +492,8 @@ $('#computing').click(function () {
         }
         var St = $('#St').val();
         var dat = $('#dat').val();
+        var now = new Date();
+        var Entr = new Date(dat);
 
         var error = "";
 
@@ -511,6 +513,11 @@ $('#computing').click(function () {
 
         if (dat == "") {
             error += "Нема дати. ";
+            $('#dat').css("border-color", "#f7b4b4");
+        }
+        
+        if (now.getTime() > Entr.getTime() && err == "") {
+            err += "Неможна обирати минулу дату. ";
             $('#dat').css("border-color", "#f7b4b4");
         }
 
@@ -534,7 +541,7 @@ $('#computing').click(function () {
                 beforeSend: CoAtt,
                 success: Computing
             });
-            y++;
+            //y++;
 
         } else {
             alert(error);
@@ -564,10 +571,11 @@ function Computing(data) {
     }
 
     if (error != "") {
+        $('#box_text').hide();
         alert(error);
     } else {
+        $('#box_text').show();
         SetRoute(data);
-        $('#box_text').toggle();
     }
     data = "";
     $('#computing').removeAttr("disabled");
